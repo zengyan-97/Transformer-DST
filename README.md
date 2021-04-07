@@ -5,6 +5,7 @@ This code is the official pytorch implementation of [Jointly Optimizing State Op
 
 <p align="left"><img width="95%" src="img/model.png" /></p>
 
+Notice that this model only consists of a single BERT (base-uncased).
 
 ## Requirements
 
@@ -27,7 +28,6 @@ sh -x ./run_get_data.sh
 ## Model Training
 
 To train the model, please run this script. <br>
-The model only consists of a BERT (base-uncased).
 ```
 sh -x ./run_train_dt.sh  # MultiWoz 2.1
 sh -x ./run_train_dt_V20.sh  # MultiWoz 2.0
@@ -80,9 +80,8 @@ You can download Transformer-DST at 15-th epoch from [here](https://drive.google
 
 
 ## Reproducibility
-For many PyTorch implementations, setting random seed cannot yield identical models(). 
-Nevertheless, this code is able to produce identical results somehow. 
-We use 42 as the random seed, and we can reproduce our experimental results on a P100 GPU device. 
+This code is based on open-source code of [SOM-DST](https://github.com/clovaai/som-dst) (Thanks!). 
+We can reproduce our experimental results on a P100 GPU device using 42 as random seed. 
 
 
 ## Citation
