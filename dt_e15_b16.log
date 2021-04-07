@@ -1,0 +1,968 @@
+Attention: While Conda works well in a desktop environment, it tends to create more problems than it solves on a cluster. Instead, we recommend that users use virtual environments and the binary packages that we provide through Python wheels as documented on the Python page.
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) openmpi/2.1.1
+
+The following have been reloaded with a version change:
+  1) gcccore/.5.4.0 => gcccore/.7.3.0
+
++ export CUDA_VISIBLE_DEVICES=0
++ CUDA_VISIBLE_DEVICES=0
++ DATASET_DIR=./data/v21/
++ SAVE_DIR=./outputs/v2_dt_e15_b16_2/
++ python3 train.py --use_dt_only --use_one_optim --n_epochs 15 --batch_size 16 --data_root ./data/v21/ --save_dir ./outputs/v2_dt_e15_b16_2/ --op_code 4
+pytorch version:  1.5.0+cu101
+Namespace(attention_probs_dropout_prob=0.1, batch_size=16, beam_size=1, bert_ckpt_path='./assets/bert-base-uncased-pytorch_model.bin', bert_config_path='./assets/bert_config_base_uncased.json', data_root='./data/v21/', dec_lr=0.0001, dec_warmup=0.1, decoder_teacher_forcing=1, dev_data='dev_dials.json', dev_data_path='./data/v21/dev_dials.json', dropout=0.1, enc_lr=3e-05, enc_warmup=0.1, eval_epoch=1, exclude_domain=False, forbid_duplicate_ngrams=False, forbid_ignore_word=None, hidden_dropout_prob=0.1, length_penalty=0, max_seq_length=256, min_len=1, msg=None, n_epochs=15, n_history=1, ngram_size=2, no_dial=False, not_shuffle_state=False, num_workers=0, only_pred_op=False, ontology_data='./data/v21/ontology.json', op_code='4', random_seed=42, recover_e=0, save_dir='./outputs/v2_dt_e15_b16_2/', shuffle_p=0.5, shuffle_state=True, slot_token='[SLOT]', test_data='test_dials.json', test_data_path='./data/v21/test_dials.json', train_data='train_dials.json', train_data_path='./data/v21/train_dials.json', use_cpu=False, use_dt_only=True, use_full_slot=False, use_one_optim=True, vocab_path='assets/vocab.txt', word_dropout=0.1)
+### mkdir ./outputs/v2_dt_e15_b16_2/
+### Device: cuda
+### Random Seed: 42
+{'delete': 0, 'update': 1, 'dontcare': 2, 'carryover': 3}
+# test examples 7368
+### decoder_teacher_forcing: 1
+# train examples 54984
+# dev examples 7371
+### word index of '-',  1011
+config.type_vocab_size != state_dict[bert.embeddings.token_type_embeddings.weight] (4 != 2)
+
+### Done Load BERT
+### Use One Optim
+
+time 0.0 min, [1/15] [0/3437] mean_loss : 14.243, state_loss : 1.598, gen_loss : 10.868, dom_loss : 1.777
+time 1.4 min, [1/15] [100/3437] mean_loss : 13.492, state_loss : 0.760, gen_loss : 9.750, dom_loss : 1.669
+time 2.8 min, [1/15] [200/3437] mean_loss : 10.902, state_loss : 0.348, gen_loss : 7.170, dom_loss : 1.626
+time 4.1 min, [1/15] [300/3437] mean_loss : 8.180, state_loss : 0.234, gen_loss : 5.044, dom_loss : 1.529
+time 5.5 min, [1/15] [400/3437] mean_loss : 7.028, state_loss : 0.205, gen_loss : 3.956, dom_loss : 1.548
+time 6.9 min, [1/15] [500/3437] mean_loss : 6.373, state_loss : 0.235, gen_loss : 5.346, dom_loss : 1.468
+time 8.3 min, [1/15] [600/3437] mean_loss : 6.127, state_loss : 0.229, gen_loss : 3.859, dom_loss : 1.356
+time 9.6 min, [1/15] [700/3437] mean_loss : 5.790, state_loss : 0.150, gen_loss : 5.145, dom_loss : 1.694
+time 11.0 min, [1/15] [800/3437] mean_loss : 5.475, state_loss : 0.194, gen_loss : 3.194, dom_loss : 1.478
+time 12.4 min, [1/15] [900/3437] mean_loss : 5.129, state_loss : 0.164, gen_loss : 3.682, dom_loss : 1.354
+time 13.7 min, [1/15] [1000/3437] mean_loss : 4.645, state_loss : 0.144, gen_loss : 2.278, dom_loss : 1.016
+time 15.1 min, [1/15] [1100/3437] mean_loss : 4.285, state_loss : 0.176, gen_loss : 2.620, dom_loss : 0.663
+time 16.5 min, [1/15] [1200/3437] mean_loss : 3.847, state_loss : 0.185, gen_loss : 3.338, dom_loss : 0.549
+time 17.8 min, [1/15] [1300/3437] mean_loss : 3.482, state_loss : 0.207, gen_loss : 2.988, dom_loss : 0.298
+time 19.2 min, [1/15] [1400/3437] mean_loss : 3.247, state_loss : 0.223, gen_loss : 2.451, dom_loss : 0.356
+time 20.6 min, [1/15] [1500/3437] mean_loss : 2.918, state_loss : 0.205, gen_loss : 2.490, dom_loss : 0.195
+time 21.9 min, [1/15] [1600/3437] mean_loss : 2.857, state_loss : 0.194, gen_loss : 2.624, dom_loss : 0.059
+time 23.3 min, [1/15] [1700/3437] mean_loss : 2.647, state_loss : 0.191, gen_loss : 2.522, dom_loss : 0.216
+time 24.7 min, [1/15] [1800/3437] mean_loss : 2.577, state_loss : 0.110, gen_loss : 1.824, dom_loss : 0.227
+time 26.0 min, [1/15] [1900/3437] mean_loss : 2.441, state_loss : 0.149, gen_loss : 2.155, dom_loss : 0.375
+time 27.4 min, [1/15] [2000/3437] mean_loss : 2.323, state_loss : 0.098, gen_loss : 2.506, dom_loss : 0.384
+time 28.8 min, [1/15] [2100/3437] mean_loss : 2.294, state_loss : 0.195, gen_loss : 1.917, dom_loss : 0.406
+time 30.1 min, [1/15] [2200/3437] mean_loss : 2.131, state_loss : 0.134, gen_loss : 1.849, dom_loss : 0.039
+time 31.5 min, [1/15] [2300/3437] mean_loss : 2.084, state_loss : 0.161, gen_loss : 1.638, dom_loss : 0.134
+time 32.9 min, [1/15] [2400/3437] mean_loss : 1.963, state_loss : 0.143, gen_loss : 1.354, dom_loss : 0.350
+time 34.2 min, [1/15] [2500/3437] mean_loss : 1.867, state_loss : 0.128, gen_loss : 1.132, dom_loss : 0.103
+time 35.6 min, [1/15] [2600/3437] mean_loss : 1.885, state_loss : 0.087, gen_loss : 1.402, dom_loss : 0.487
+time 36.9 min, [1/15] [2700/3437] mean_loss : 1.752, state_loss : 0.084, gen_loss : 0.906, dom_loss : 0.259
+time 38.3 min, [1/15] [2800/3437] mean_loss : 1.642, state_loss : 0.199, gen_loss : 1.903, dom_loss : 0.345
+time 39.7 min, [1/15] [2900/3437] mean_loss : 1.595, state_loss : 0.151, gen_loss : 0.774, dom_loss : 0.095
+time 41.0 min, [1/15] [3000/3437] mean_loss : 1.538, state_loss : 0.090, gen_loss : 1.644, dom_loss : 0.022
+time 42.4 min, [1/15] [3100/3437] mean_loss : 1.500, state_loss : 0.130, gen_loss : 0.849, dom_loss : 0.093
+time 43.8 min, [1/15] [3200/3437] mean_loss : 1.417, state_loss : 0.114, gen_loss : 1.056, dom_loss : 0.100
+time 45.1 min, [1/15] [3300/3437] mean_loss : 1.402, state_loss : 0.118, gen_loss : 0.857, dom_loss : 0.332
+time 46.5 min, [1/15] [3400/3437] mean_loss : 1.303, state_loss : 0.101, gen_loss : 0.962, dom_loss : 0.063
+
+time 47.0 min, [2/15] [0/3437] mean_loss : 0.500, state_loss : 0.075, gen_loss : 0.395, dom_loss : 0.029
+time 48.4 min, [2/15] [100/3437] mean_loss : 1.048, state_loss : 0.103, gen_loss : 0.623, dom_loss : 0.028
+time 49.7 min, [2/15] [200/3437] mean_loss : 0.942, state_loss : 0.124, gen_loss : 0.482, dom_loss : 0.129
+time 51.1 min, [2/15] [300/3437] mean_loss : 0.868, state_loss : 0.111, gen_loss : 0.867, dom_loss : 0.026
+time 52.5 min, [2/15] [400/3437] mean_loss : 0.797, state_loss : 0.091, gen_loss : 0.493, dom_loss : 0.046
+time 53.8 min, [2/15] [500/3437] mean_loss : 0.778, state_loss : 0.159, gen_loss : 0.545, dom_loss : 0.030
+time 55.2 min, [2/15] [600/3437] mean_loss : 0.719, state_loss : 0.082, gen_loss : 0.803, dom_loss : 0.071
+time 56.5 min, [2/15] [700/3437] mean_loss : 0.624, state_loss : 0.063, gen_loss : 0.178, dom_loss : 0.013
+time 57.9 min, [2/15] [800/3437] mean_loss : 0.659, state_loss : 0.064, gen_loss : 0.489, dom_loss : 0.093
+time 59.3 min, [2/15] [900/3437] mean_loss : 0.643, state_loss : 0.047, gen_loss : 0.566, dom_loss : 0.179
+time 60.6 min, [2/15] [1000/3437] mean_loss : 0.629, state_loss : 0.061, gen_loss : 0.161, dom_loss : 0.046
+time 62.0 min, [2/15] [1100/3437] mean_loss : 0.557, state_loss : 0.068, gen_loss : 0.092, dom_loss : 0.342
+time 63.4 min, [2/15] [1200/3437] mean_loss : 0.554, state_loss : 0.067, gen_loss : 0.255, dom_loss : 0.113
+time 64.7 min, [2/15] [1300/3437] mean_loss : 0.535, state_loss : 0.062, gen_loss : 0.680, dom_loss : 0.041
+time 66.1 min, [2/15] [1400/3437] mean_loss : 0.542, state_loss : 0.069, gen_loss : 0.237, dom_loss : 0.086
+time 67.5 min, [2/15] [1500/3437] mean_loss : 0.579, state_loss : 0.063, gen_loss : 0.398, dom_loss : 0.099
+time 68.8 min, [2/15] [1600/3437] mean_loss : 0.588, state_loss : 0.087, gen_loss : 0.213, dom_loss : 0.654
+time 70.2 min, [2/15] [1700/3437] mean_loss : 0.555, state_loss : 0.076, gen_loss : 0.179, dom_loss : 0.026
+time 71.6 min, [2/15] [1800/3437] mean_loss : 0.492, state_loss : 0.057, gen_loss : 0.152, dom_loss : 0.110
+time 72.9 min, [2/15] [1900/3437] mean_loss : 0.520, state_loss : 0.031, gen_loss : 0.102, dom_loss : 0.051
+time 74.3 min, [2/15] [2000/3437] mean_loss : 0.494, state_loss : 0.052, gen_loss : 0.141, dom_loss : 0.015
+time 75.6 min, [2/15] [2100/3437] mean_loss : 0.471, state_loss : 0.078, gen_loss : 0.189, dom_loss : 0.279
+time 77.0 min, [2/15] [2200/3437] mean_loss : 0.513, state_loss : 0.045, gen_loss : 0.433, dom_loss : 0.021
+time 78.4 min, [2/15] [2300/3437] mean_loss : 0.486, state_loss : 0.078, gen_loss : 0.124, dom_loss : 0.328
+time 79.7 min, [2/15] [2400/3437] mean_loss : 0.454, state_loss : 0.079, gen_loss : 0.303, dom_loss : 0.022
+time 81.1 min, [2/15] [2500/3437] mean_loss : 0.474, state_loss : 0.038, gen_loss : 0.258, dom_loss : 0.124
+time 82.5 min, [2/15] [2600/3437] mean_loss : 0.483, state_loss : 0.040, gen_loss : 0.072, dom_loss : 0.050
+time 83.9 min, [2/15] [2700/3437] mean_loss : 0.440, state_loss : 0.043, gen_loss : 0.215, dom_loss : 0.727
+time 85.2 min, [2/15] [2800/3437] mean_loss : 0.446, state_loss : 0.026, gen_loss : 0.108, dom_loss : 0.060
+time 86.6 min, [2/15] [2900/3437] mean_loss : 0.445, state_loss : 0.035, gen_loss : 0.139, dom_loss : 0.149
+time 87.9 min, [2/15] [3000/3437] mean_loss : 0.436, state_loss : 0.073, gen_loss : 0.273, dom_loss : 0.422
+time 89.3 min, [2/15] [3100/3437] mean_loss : 0.426, state_loss : 0.037, gen_loss : 0.218, dom_loss : 0.012
+time 90.7 min, [2/15] [3200/3437] mean_loss : 0.422, state_loss : 0.042, gen_loss : 0.346, dom_loss : 0.011
+time 92.0 min, [2/15] [3300/3437] mean_loss : 0.424, state_loss : 0.059, gen_loss : 0.165, dom_loss : 0.092
+time 93.4 min, [2/15] [3400/3437] mean_loss : 0.403, state_loss : 0.064, gen_loss : 0.656, dom_loss : 0.015
+
+time 93.9 min, [3/15] [0/3437] mean_loss : 0.559, state_loss : 0.053, gen_loss : 0.427, dom_loss : 0.078
+time 95.3 min, [3/15] [100/3437] mean_loss : 0.412, state_loss : 0.036, gen_loss : 0.089, dom_loss : 0.014
+time 96.7 min, [3/15] [200/3437] mean_loss : 0.367, state_loss : 0.037, gen_loss : 0.113, dom_loss : 0.044
+time 98.0 min, [3/15] [300/3437] mean_loss : 0.419, state_loss : 0.046, gen_loss : 0.156, dom_loss : 0.252
+time 99.4 min, [3/15] [400/3437] mean_loss : 0.407, state_loss : 0.066, gen_loss : 0.401, dom_loss : 0.031
+time 100.8 min, [3/15] [500/3437] mean_loss : 0.361, state_loss : 0.060, gen_loss : 0.130, dom_loss : 0.122
+time 102.1 min, [3/15] [600/3437] mean_loss : 0.299, state_loss : 0.023, gen_loss : 0.088, dom_loss : 0.007
+time 103.5 min, [3/15] [700/3437] mean_loss : 0.339, state_loss : 0.017, gen_loss : 0.033, dom_loss : 0.005
+time 104.8 min, [3/15] [800/3437] mean_loss : 0.365, state_loss : 0.020, gen_loss : 0.108, dom_loss : 0.332
+time 106.2 min, [3/15] [900/3437] mean_loss : 0.361, state_loss : 0.046, gen_loss : 0.104, dom_loss : 0.180
+time 107.6 min, [3/15] [1000/3437] mean_loss : 0.368, state_loss : 0.036, gen_loss : 0.052, dom_loss : 0.181
+time 109.0 min, [3/15] [1100/3437] mean_loss : 0.362, state_loss : 0.054, gen_loss : 0.021, dom_loss : 0.010
+time 110.3 min, [3/15] [1200/3437] mean_loss : 0.382, state_loss : 0.037, gen_loss : 0.056, dom_loss : 0.026
+time 111.7 min, [3/15] [1300/3437] mean_loss : 0.295, state_loss : 0.022, gen_loss : 0.018, dom_loss : 0.018
+time 113.0 min, [3/15] [1400/3437] mean_loss : 0.355, state_loss : 0.043, gen_loss : 0.032, dom_loss : 0.073
+time 114.4 min, [3/15] [1500/3437] mean_loss : 0.338, state_loss : 0.022, gen_loss : 0.052, dom_loss : 0.014
+time 115.8 min, [3/15] [1600/3437] mean_loss : 0.304, state_loss : 0.041, gen_loss : 0.166, dom_loss : 0.006
+time 117.1 min, [3/15] [1700/3437] mean_loss : 0.379, state_loss : 0.039, gen_loss : 0.284, dom_loss : 0.036
+time 118.5 min, [3/15] [1800/3437] mean_loss : 0.345, state_loss : 0.046, gen_loss : 0.056, dom_loss : 0.150
+time 119.8 min, [3/15] [1900/3437] mean_loss : 0.340, state_loss : 0.099, gen_loss : 0.332, dom_loss : 0.368
+time 121.2 min, [3/15] [2000/3437] mean_loss : 0.357, state_loss : 0.043, gen_loss : 0.037, dom_loss : 0.020
+time 122.6 min, [3/15] [2100/3437] mean_loss : 0.413, state_loss : 0.026, gen_loss : 0.350, dom_loss : 0.138
+time 124.0 min, [3/15] [2200/3437] mean_loss : 0.356, state_loss : 0.035, gen_loss : 0.360, dom_loss : 0.035
+time 125.3 min, [3/15] [2300/3437] mean_loss : 0.377, state_loss : 0.019, gen_loss : 0.179, dom_loss : 0.025
+time 126.7 min, [3/15] [2400/3437] mean_loss : 0.325, state_loss : 0.039, gen_loss : 0.064, dom_loss : 0.013
+time 128.0 min, [3/15] [2500/3437] mean_loss : 0.392, state_loss : 0.040, gen_loss : 0.255, dom_loss : 0.006
+time 129.4 min, [3/15] [2600/3437] mean_loss : 0.367, state_loss : 0.064, gen_loss : 0.048, dom_loss : 0.244
+time 130.8 min, [3/15] [2700/3437] mean_loss : 0.382, state_loss : 0.036, gen_loss : 0.063, dom_loss : 0.049
+time 132.1 min, [3/15] [2800/3437] mean_loss : 0.342, state_loss : 0.053, gen_loss : 0.331, dom_loss : 0.011
+time 133.5 min, [3/15] [2900/3437] mean_loss : 0.380, state_loss : 0.048, gen_loss : 0.462, dom_loss : 0.088
+time 134.9 min, [3/15] [3000/3437] mean_loss : 0.330, state_loss : 0.032, gen_loss : 0.019, dom_loss : 0.012
+time 136.3 min, [3/15] [3100/3437] mean_loss : 0.345, state_loss : 0.059, gen_loss : 0.283, dom_loss : 0.103
+time 137.6 min, [3/15] [3200/3437] mean_loss : 0.356, state_loss : 0.048, gen_loss : 0.053, dom_loss : 0.013
+time 139.0 min, [3/15] [3300/3437] mean_loss : 0.325, state_loss : 0.038, gen_loss : 0.029, dom_loss : 0.011
+time 140.3 min, [3/15] [3400/3437] mean_loss : 0.335, state_loss : 0.041, gen_loss : 0.067, dom_loss : 0.176
+
+time 140.9 min, [4/15] [0/3437] mean_loss : 0.233, state_loss : 0.049, gen_loss : 0.143, dom_loss : 0.041
+time 142.2 min, [4/15] [100/3437] mean_loss : 0.283, state_loss : 0.062, gen_loss : 0.156, dom_loss : 0.104
+time 143.6 min, [4/15] [200/3437] mean_loss : 0.341, state_loss : 0.031, gen_loss : 0.342, dom_loss : 0.011
+time 145.0 min, [4/15] [300/3437] mean_loss : 0.317, state_loss : 0.034, gen_loss : 0.020, dom_loss : 0.098
+time 146.3 min, [4/15] [400/3437] mean_loss : 0.306, state_loss : 0.060, gen_loss : 0.201, dom_loss : 0.021
+time 147.7 min, [4/15] [500/3437] mean_loss : 0.252, state_loss : 0.059, gen_loss : 0.220, dom_loss : 0.057
+time 149.1 min, [4/15] [600/3437] mean_loss : 0.314, state_loss : 0.047, gen_loss : 0.149, dom_loss : 0.012
+time 150.4 min, [4/15] [700/3437] mean_loss : 0.257, state_loss : 0.039, gen_loss : 0.151, dom_loss : 0.013
+time 151.8 min, [4/15] [800/3437] mean_loss : 0.312, state_loss : 0.037, gen_loss : 0.156, dom_loss : 0.136
+time 153.2 min, [4/15] [900/3437] mean_loss : 0.293, state_loss : 0.080, gen_loss : 0.116, dom_loss : 0.506
+time 154.5 min, [4/15] [1000/3437] mean_loss : 0.293, state_loss : 0.025, gen_loss : 0.086, dom_loss : 0.117
+time 155.9 min, [4/15] [1100/3437] mean_loss : 0.287, state_loss : 0.070, gen_loss : 0.088, dom_loss : 0.037
+time 157.3 min, [4/15] [1200/3437] mean_loss : 0.252, state_loss : 0.021, gen_loss : 0.013, dom_loss : 0.005
+time 158.6 min, [4/15] [1300/3437] mean_loss : 0.322, state_loss : 0.047, gen_loss : 0.281, dom_loss : 0.476
+time 160.0 min, [4/15] [1400/3437] mean_loss : 0.308, state_loss : 0.028, gen_loss : 0.168, dom_loss : 0.137
+time 161.4 min, [4/15] [1500/3437] mean_loss : 0.294, state_loss : 0.049, gen_loss : 0.173, dom_loss : 0.183
+time 162.7 min, [4/15] [1600/3437] mean_loss : 0.289, state_loss : 0.055, gen_loss : 0.165, dom_loss : 0.011
+time 164.1 min, [4/15] [1700/3437] mean_loss : 0.250, state_loss : 0.040, gen_loss : 0.012, dom_loss : 0.006
+time 165.5 min, [4/15] [1800/3437] mean_loss : 0.285, state_loss : 0.029, gen_loss : 0.021, dom_loss : 0.107
+time 166.8 min, [4/15] [1900/3437] mean_loss : 0.291, state_loss : 0.022, gen_loss : 0.081, dom_loss : 0.011
+time 168.2 min, [4/15] [2000/3437] mean_loss : 0.319, state_loss : 0.015, gen_loss : 0.193, dom_loss : 0.011
+time 169.6 min, [4/15] [2100/3437] mean_loss : 0.296, state_loss : 0.052, gen_loss : 0.449, dom_loss : 0.008
+time 170.9 min, [4/15] [2200/3437] mean_loss : 0.285, state_loss : 0.027, gen_loss : 0.068, dom_loss : 0.098
+time 172.3 min, [4/15] [2300/3437] mean_loss : 0.317, state_loss : 0.044, gen_loss : 0.284, dom_loss : 0.084
+time 173.7 min, [4/15] [2400/3437] mean_loss : 0.308, state_loss : 0.087, gen_loss : 0.082, dom_loss : 0.011
+time 175.1 min, [4/15] [2500/3437] mean_loss : 0.294, state_loss : 0.030, gen_loss : 0.273, dom_loss : 0.012
+time 176.4 min, [4/15] [2600/3437] mean_loss : 0.293, state_loss : 0.035, gen_loss : 0.301, dom_loss : 0.197
+time 177.8 min, [4/15] [2700/3437] mean_loss : 0.295, state_loss : 0.038, gen_loss : 0.028, dom_loss : 0.213
+time 179.1 min, [4/15] [2800/3437] mean_loss : 0.322, state_loss : 0.041, gen_loss : 0.193, dom_loss : 0.124
+time 180.5 min, [4/15] [2900/3437] mean_loss : 0.263, state_loss : 0.041, gen_loss : 0.216, dom_loss : 0.379
+time 181.9 min, [4/15] [3000/3437] mean_loss : 0.250, state_loss : 0.038, gen_loss : 0.144, dom_loss : 0.009
+time 183.2 min, [4/15] [3100/3437] mean_loss : 0.314, state_loss : 0.035, gen_loss : 0.314, dom_loss : 0.133
+time 184.6 min, [4/15] [3200/3437] mean_loss : 0.287, state_loss : 0.038, gen_loss : 0.030, dom_loss : 0.077
+time 186.0 min, [4/15] [3300/3437] mean_loss : 0.302, state_loss : 0.034, gen_loss : 0.129, dom_loss : 0.037
+time 187.3 min, [4/15] [3400/3437] mean_loss : 0.297, state_loss : 0.027, gen_loss : 0.137, dom_loss : 0.206
+
+time 187.9 min, [5/15] [0/3437] mean_loss : 0.096, state_loss : 0.021, gen_loss : 0.061, dom_loss : 0.014
+time 189.2 min, [5/15] [100/3437] mean_loss : 0.259, state_loss : 0.021, gen_loss : 0.065, dom_loss : 0.052
+time 190.6 min, [5/15] [200/3437] mean_loss : 0.279, state_loss : 0.007, gen_loss : 0.010, dom_loss : 0.009
+time 192.0 min, [5/15] [300/3437] mean_loss : 0.244, state_loss : 0.030, gen_loss : 0.063, dom_loss : 0.009
+time 193.3 min, [5/15] [400/3437] mean_loss : 0.260, state_loss : 0.031, gen_loss : 0.009, dom_loss : 0.006
+time 194.7 min, [5/15] [500/3437] mean_loss : 0.290, state_loss : 0.023, gen_loss : 0.246, dom_loss : 0.075
+time 196.1 min, [5/15] [600/3437] mean_loss : 0.266, state_loss : 0.020, gen_loss : 0.048, dom_loss : 0.006
+time 197.4 min, [5/15] [700/3437] mean_loss : 0.224, state_loss : 0.065, gen_loss : 0.069, dom_loss : 0.051
+time 198.8 min, [5/15] [800/3437] mean_loss : 0.242, state_loss : 0.038, gen_loss : 0.175, dom_loss : 0.006
+time 200.2 min, [5/15] [900/3437] mean_loss : 0.263, state_loss : 0.028, gen_loss : 0.376, dom_loss : 0.113
+time 201.5 min, [5/15] [1000/3437] mean_loss : 0.262, state_loss : 0.037, gen_loss : 0.213, dom_loss : 0.064
+time 202.9 min, [5/15] [1100/3437] mean_loss : 0.250, state_loss : 0.016, gen_loss : 0.162, dom_loss : 0.033
+time 204.3 min, [5/15] [1200/3437] mean_loss : 0.276, state_loss : 0.049, gen_loss : 0.347, dom_loss : 0.010
+time 205.6 min, [5/15] [1300/3437] mean_loss : 0.297, state_loss : 0.031, gen_loss : 0.136, dom_loss : 0.007
+time 207.0 min, [5/15] [1400/3437] mean_loss : 0.264, state_loss : 0.030, gen_loss : 0.187, dom_loss : 0.010
+time 208.4 min, [5/15] [1500/3437] mean_loss : 0.244, state_loss : 0.010, gen_loss : 0.091, dom_loss : 0.027
+time 209.7 min, [5/15] [1600/3437] mean_loss : 0.234, state_loss : 0.090, gen_loss : 0.128, dom_loss : 0.398
+time 211.1 min, [5/15] [1700/3437] mean_loss : 0.217, state_loss : 0.029, gen_loss : 0.144, dom_loss : 0.037
+time 212.5 min, [5/15] [1800/3437] mean_loss : 0.229, state_loss : 0.047, gen_loss : 0.324, dom_loss : 0.008
+time 213.8 min, [5/15] [1900/3437] mean_loss : 0.283, state_loss : 0.037, gen_loss : 0.092, dom_loss : 0.216
+time 215.2 min, [5/15] [2000/3437] mean_loss : 0.258, state_loss : 0.021, gen_loss : 0.249, dom_loss : 0.005
+time 216.6 min, [5/15] [2100/3437] mean_loss : 0.273, state_loss : 0.045, gen_loss : 0.212, dom_loss : 0.018
+time 217.9 min, [5/15] [2200/3437] mean_loss : 0.239, state_loss : 0.028, gen_loss : 0.017, dom_loss : 0.007
+time 219.3 min, [5/15] [2300/3437] mean_loss : 0.275, state_loss : 0.023, gen_loss : 0.026, dom_loss : 0.041
+time 220.7 min, [5/15] [2400/3437] mean_loss : 0.255, state_loss : 0.041, gen_loss : 0.254, dom_loss : 0.005
+time 222.0 min, [5/15] [2500/3437] mean_loss : 0.244, state_loss : 0.027, gen_loss : 0.185, dom_loss : 0.006
+time 223.4 min, [5/15] [2600/3437] mean_loss : 0.266, state_loss : 0.044, gen_loss : 0.075, dom_loss : 0.009
+time 224.8 min, [5/15] [2700/3437] mean_loss : 0.231, state_loss : 0.022, gen_loss : 0.046, dom_loss : 0.005
+time 226.1 min, [5/15] [2800/3437] mean_loss : 0.280, state_loss : 0.069, gen_loss : 0.034, dom_loss : 0.433
+time 227.5 min, [5/15] [2900/3437] mean_loss : 0.262, state_loss : 0.031, gen_loss : 0.235, dom_loss : 0.132
+time 228.9 min, [5/15] [3000/3437] mean_loss : 0.271, state_loss : 0.012, gen_loss : 0.017, dom_loss : 0.004
+time 230.2 min, [5/15] [3100/3437] mean_loss : 0.225, state_loss : 0.067, gen_loss : 0.181, dom_loss : 0.158
+time 231.6 min, [5/15] [3200/3437] mean_loss : 0.260, state_loss : 0.090, gen_loss : 0.151, dom_loss : 0.243
+time 233.0 min, [5/15] [3300/3437] mean_loss : 0.280, state_loss : 0.041, gen_loss : 0.094, dom_loss : 0.013
+time 234.3 min, [5/15] [3400/3437] mean_loss : 0.268, state_loss : 0.023, gen_loss : 0.030, dom_loss : 0.057
+
+time 234.9 min, [6/15] [0/3437] mean_loss : 0.681, state_loss : 0.010, gen_loss : 0.457, dom_loss : 0.214
+time 236.2 min, [6/15] [100/3437] mean_loss : 0.219, state_loss : 0.042, gen_loss : 0.091, dom_loss : 0.026
+time 237.6 min, [6/15] [200/3437] mean_loss : 0.241, state_loss : 0.022, gen_loss : 0.029, dom_loss : 0.008
+time 239.0 min, [6/15] [300/3437] mean_loss : 0.213, state_loss : 0.038, gen_loss : 0.170, dom_loss : 0.138
+time 240.3 min, [6/15] [400/3437] mean_loss : 0.214, state_loss : 0.049, gen_loss : 0.510, dom_loss : 0.063
+time 241.7 min, [6/15] [500/3437] mean_loss : 0.190, state_loss : 0.023, gen_loss : 0.071, dom_loss : 0.119
+time 243.1 min, [6/15] [600/3437] mean_loss : 0.249, state_loss : 0.034, gen_loss : 0.248, dom_loss : 0.296
+time 244.4 min, [6/15] [700/3437] mean_loss : 0.193, state_loss : 0.051, gen_loss : 0.071, dom_loss : 0.010
+time 245.8 min, [6/15] [800/3437] mean_loss : 0.211, state_loss : 0.017, gen_loss : 0.054, dom_loss : 0.004
+time 247.2 min, [6/15] [900/3437] mean_loss : 0.197, state_loss : 0.045, gen_loss : 0.006, dom_loss : 0.013
+time 248.5 min, [6/15] [1000/3437] mean_loss : 0.228, state_loss : 0.011, gen_loss : 0.070, dom_loss : 0.006
+time 249.9 min, [6/15] [1100/3437] mean_loss : 0.241, state_loss : 0.012, gen_loss : 0.052, dom_loss : 0.015
+time 251.3 min, [6/15] [1200/3437] mean_loss : 0.227, state_loss : 0.045, gen_loss : 0.195, dom_loss : 0.026
+time 252.6 min, [6/15] [1300/3437] mean_loss : 0.199, state_loss : 0.048, gen_loss : 0.214, dom_loss : 0.007
+time 254.0 min, [6/15] [1400/3437] mean_loss : 0.219, state_loss : 0.021, gen_loss : 0.064, dom_loss : 0.005
+time 255.4 min, [6/15] [1500/3437] mean_loss : 0.239, state_loss : 0.088, gen_loss : 0.072, dom_loss : 0.080
+time 256.7 min, [6/15] [1600/3437] mean_loss : 0.222, state_loss : 0.020, gen_loss : 0.006, dom_loss : 0.010
+time 258.1 min, [6/15] [1700/3437] mean_loss : 0.209, state_loss : 0.022, gen_loss : 0.059, dom_loss : 0.009
+time 259.4 min, [6/15] [1800/3437] mean_loss : 0.215, state_loss : 0.030, gen_loss : 0.004, dom_loss : 0.013
+time 260.8 min, [6/15] [1900/3437] mean_loss : 0.225, state_loss : 0.028, gen_loss : 0.026, dom_loss : 0.329
+time 262.2 min, [6/15] [2000/3437] mean_loss : 0.234, state_loss : 0.041, gen_loss : 0.273, dom_loss : 0.043
+time 263.6 min, [6/15] [2100/3437] mean_loss : 0.251, state_loss : 0.041, gen_loss : 0.191, dom_loss : 0.221
+time 264.9 min, [6/15] [2200/3437] mean_loss : 0.222, state_loss : 0.018, gen_loss : 0.074, dom_loss : 0.009
+time 266.3 min, [6/15] [2300/3437] mean_loss : 0.220, state_loss : 0.053, gen_loss : 0.208, dom_loss : 0.325
+time 267.7 min, [6/15] [2400/3437] mean_loss : 0.233, state_loss : 0.020, gen_loss : 0.170, dom_loss : 0.122
+time 269.1 min, [6/15] [2500/3437] mean_loss : 0.230, state_loss : 0.023, gen_loss : 0.075, dom_loss : 0.079
+time 270.4 min, [6/15] [2600/3437] mean_loss : 0.230, state_loss : 0.048, gen_loss : 0.287, dom_loss : 0.007
+time 271.8 min, [6/15] [2700/3437] mean_loss : 0.204, state_loss : 0.040, gen_loss : 0.013, dom_loss : 0.012
+time 273.2 min, [6/15] [2800/3437] mean_loss : 0.247, state_loss : 0.017, gen_loss : 0.166, dom_loss : 0.015
+time 274.6 min, [6/15] [2900/3437] mean_loss : 0.201, state_loss : 0.026, gen_loss : 0.112, dom_loss : 0.017
+time 276.0 min, [6/15] [3000/3437] mean_loss : 0.239, state_loss : 0.049, gen_loss : 0.240, dom_loss : 0.372
+time 277.4 min, [6/15] [3100/3437] mean_loss : 0.231, state_loss : 0.025, gen_loss : 0.140, dom_loss : 0.006
+time 278.7 min, [6/15] [3200/3437] mean_loss : 0.229, state_loss : 0.023, gen_loss : 0.122, dom_loss : 0.007
+time 280.1 min, [6/15] [3300/3437] mean_loss : 0.220, state_loss : 0.031, gen_loss : 0.200, dom_loss : 0.067
+time 281.5 min, [6/15] [3400/3437] mean_loss : 0.237, state_loss : 0.057, gen_loss : 0.219, dom_loss : 0.036
+
+time 282.0 min, [7/15] [0/3437] mean_loss : 0.126, state_loss : 0.032, gen_loss : 0.081, dom_loss : 0.012
+time 283.4 min, [7/15] [100/3437] mean_loss : 0.194, state_loss : 0.011, gen_loss : 0.003, dom_loss : 0.006
+time 284.8 min, [7/15] [200/3437] mean_loss : 0.187, state_loss : 0.041, gen_loss : 0.178, dom_loss : 0.158
+time 286.2 min, [7/15] [300/3437] mean_loss : 0.180, state_loss : 0.067, gen_loss : 0.217, dom_loss : 0.045
+time 287.5 min, [7/15] [400/3437] mean_loss : 0.181, state_loss : 0.022, gen_loss : 0.090, dom_loss : 0.344
+time 288.9 min, [7/15] [500/3437] mean_loss : 0.218, state_loss : 0.012, gen_loss : 0.007, dom_loss : 0.109
+time 290.3 min, [7/15] [600/3437] mean_loss : 0.200, state_loss : 0.021, gen_loss : 0.050, dom_loss : 0.013
+time 291.7 min, [7/15] [700/3437] mean_loss : 0.192, state_loss : 0.021, gen_loss : 0.244, dom_loss : 0.065
+time 293.1 min, [7/15] [800/3437] mean_loss : 0.208, state_loss : 0.038, gen_loss : 0.120, dom_loss : 0.179
+time 294.4 min, [7/15] [900/3437] mean_loss : 0.219, state_loss : 0.042, gen_loss : 0.111, dom_loss : 0.009
+time 295.8 min, [7/15] [1000/3437] mean_loss : 0.206, state_loss : 0.060, gen_loss : 0.042, dom_loss : 0.298
+time 297.2 min, [7/15] [1100/3437] mean_loss : 0.200, state_loss : 0.032, gen_loss : 0.012, dom_loss : 0.008
+time 298.6 min, [7/15] [1200/3437] mean_loss : 0.207, state_loss : 0.029, gen_loss : 0.163, dom_loss : 0.016
+time 299.9 min, [7/15] [1300/3437] mean_loss : 0.186, state_loss : 0.021, gen_loss : 0.082, dom_loss : 0.008
+time 301.3 min, [7/15] [1400/3437] mean_loss : 0.224, state_loss : 0.065, gen_loss : 0.206, dom_loss : 0.092
+time 302.7 min, [7/15] [1500/3437] mean_loss : 0.182, state_loss : 0.032, gen_loss : 0.041, dom_loss : 0.009
+time 304.1 min, [7/15] [1600/3437] mean_loss : 0.189, state_loss : 0.036, gen_loss : 0.002, dom_loss : 0.228
+time 305.5 min, [7/15] [1700/3437] mean_loss : 0.219, state_loss : 0.025, gen_loss : 0.123, dom_loss : 0.005
+time 306.8 min, [7/15] [1800/3437] mean_loss : 0.215, state_loss : 0.011, gen_loss : 0.138, dom_loss : 0.003
+time 308.2 min, [7/15] [1900/3437] mean_loss : 0.191, state_loss : 0.023, gen_loss : 0.201, dom_loss : 0.107
+time 309.6 min, [7/15] [2000/3437] mean_loss : 0.210, state_loss : 0.038, gen_loss : 0.150, dom_loss : 0.168
+time 311.0 min, [7/15] [2100/3437] mean_loss : 0.184, state_loss : 0.034, gen_loss : 0.174, dom_loss : 0.012
+time 312.4 min, [7/15] [2200/3437] mean_loss : 0.196, state_loss : 0.034, gen_loss : 0.005, dom_loss : 0.130
+time 313.7 min, [7/15] [2300/3437] mean_loss : 0.215, state_loss : 0.031, gen_loss : 0.119, dom_loss : 0.006
+time 315.1 min, [7/15] [2400/3437] mean_loss : 0.192, state_loss : 0.035, gen_loss : 0.015, dom_loss : 0.296
+time 316.5 min, [7/15] [2500/3437] mean_loss : 0.213, state_loss : 0.022, gen_loss : 0.042, dom_loss : 0.008
+time 317.9 min, [7/15] [2600/3437] mean_loss : 0.186, state_loss : 0.042, gen_loss : 0.199, dom_loss : 0.023
+time 319.3 min, [7/15] [2700/3437] mean_loss : 0.177, state_loss : 0.042, gen_loss : 0.189, dom_loss : 0.051
+time 320.7 min, [7/15] [2800/3437] mean_loss : 0.211, state_loss : 0.043, gen_loss : 0.076, dom_loss : 0.060
+time 322.0 min, [7/15] [2900/3437] mean_loss : 0.174, state_loss : 0.040, gen_loss : 0.179, dom_loss : 0.312
+time 323.4 min, [7/15] [3000/3437] mean_loss : 0.213, state_loss : 0.019, gen_loss : 0.033, dom_loss : 0.011
+time 324.8 min, [7/15] [3100/3437] mean_loss : 0.202, state_loss : 0.020, gen_loss : 0.169, dom_loss : 0.007
+time 326.2 min, [7/15] [3200/3437] mean_loss : 0.174, state_loss : 0.074, gen_loss : 0.262, dom_loss : 0.023
+time 327.6 min, [7/15] [3300/3437] mean_loss : 0.197, state_loss : 0.043, gen_loss : 0.022, dom_loss : 0.009
+time 329.0 min, [7/15] [3400/3437] mean_loss : 0.200, state_loss : 0.030, gen_loss : 0.054, dom_loss : 0.002
+
+time 329.5 min, [8/15] [0/3437] mean_loss : 0.104, state_loss : 0.021, gen_loss : 0.044, dom_loss : 0.039
+time 330.9 min, [8/15] [100/3437] mean_loss : 0.190, state_loss : 0.020, gen_loss : 0.009, dom_loss : 0.005
+time 332.2 min, [8/15] [200/3437] mean_loss : 0.169, state_loss : 0.021, gen_loss : 0.004, dom_loss : 0.011
+time 333.6 min, [8/15] [300/3437] mean_loss : 0.168, state_loss : 0.046, gen_loss : 0.078, dom_loss : 0.058
+time 335.0 min, [8/15] [400/3437] mean_loss : 0.167, state_loss : 0.038, gen_loss : 0.077, dom_loss : 0.002
+time 336.4 min, [8/15] [500/3437] mean_loss : 0.191, state_loss : 0.018, gen_loss : 0.007, dom_loss : 0.037
+time 337.8 min, [8/15] [600/3437] mean_loss : 0.181, state_loss : 0.027, gen_loss : 0.061, dom_loss : 0.006
+time 339.1 min, [8/15] [700/3437] mean_loss : 0.166, state_loss : 0.022, gen_loss : 0.028, dom_loss : 0.206
+time 340.5 min, [8/15] [800/3437] mean_loss : 0.167, state_loss : 0.014, gen_loss : 0.070, dom_loss : 0.004
+time 341.9 min, [8/15] [900/3437] mean_loss : 0.169, state_loss : 0.036, gen_loss : 0.138, dom_loss : 0.007
+time 343.3 min, [8/15] [1000/3437] mean_loss : 0.172, state_loss : 0.013, gen_loss : 0.053, dom_loss : 0.013
+time 344.7 min, [8/15] [1100/3437] mean_loss : 0.165, state_loss : 0.025, gen_loss : 0.017, dom_loss : 0.008
+time 346.0 min, [8/15] [1200/3437] mean_loss : 0.193, state_loss : 0.040, gen_loss : 0.163, dom_loss : 0.064
+time 347.4 min, [8/15] [1300/3437] mean_loss : 0.187, state_loss : 0.017, gen_loss : 0.034, dom_loss : 0.005
+time 348.8 min, [8/15] [1400/3437] mean_loss : 0.165, state_loss : 0.035, gen_loss : 0.039, dom_loss : 0.004
+time 350.2 min, [8/15] [1500/3437] mean_loss : 0.179, state_loss : 0.029, gen_loss : 0.028, dom_loss : 0.170
+time 351.5 min, [8/15] [1600/3437] mean_loss : 0.158, state_loss : 0.038, gen_loss : 0.261, dom_loss : 0.001
+time 352.9 min, [8/15] [1700/3437] mean_loss : 0.158, state_loss : 0.015, gen_loss : 0.099, dom_loss : 0.007
+time 354.3 min, [8/15] [1800/3437] mean_loss : 0.175, state_loss : 0.047, gen_loss : 0.116, dom_loss : 0.002
+time 355.7 min, [8/15] [1900/3437] mean_loss : 0.203, state_loss : 0.020, gen_loss : 0.193, dom_loss : 0.001
+time 357.1 min, [8/15] [2000/3437] mean_loss : 0.178, state_loss : 0.041, gen_loss : 0.033, dom_loss : 0.016
+time 358.5 min, [8/15] [2100/3437] mean_loss : 0.180, state_loss : 0.048, gen_loss : 0.293, dom_loss : 0.012
+time 359.8 min, [8/15] [2200/3437] mean_loss : 0.175, state_loss : 0.035, gen_loss : 0.076, dom_loss : 0.146
+time 361.2 min, [8/15] [2300/3437] mean_loss : 0.165, state_loss : 0.011, gen_loss : 0.224, dom_loss : 0.003
+time 362.6 min, [8/15] [2400/3437] mean_loss : 0.191, state_loss : 0.013, gen_loss : 0.285, dom_loss : 0.233
+time 364.0 min, [8/15] [2500/3437] mean_loss : 0.180, state_loss : 0.039, gen_loss : 0.040, dom_loss : 0.374
+time 365.3 min, [8/15] [2600/3437] mean_loss : 0.199, state_loss : 0.026, gen_loss : 0.154, dom_loss : 0.005
+time 366.7 min, [8/15] [2700/3437] mean_loss : 0.161, state_loss : 0.009, gen_loss : 0.018, dom_loss : 0.003
+time 368.1 min, [8/15] [2800/3437] mean_loss : 0.173, state_loss : 0.015, gen_loss : 0.226, dom_loss : 0.069
+time 369.5 min, [8/15] [2900/3437] mean_loss : 0.189, state_loss : 0.033, gen_loss : 0.014, dom_loss : 0.007
+time 370.9 min, [8/15] [3000/3437] mean_loss : 0.172, state_loss : 0.023, gen_loss : 0.013, dom_loss : 0.004
+time 372.3 min, [8/15] [3100/3437] mean_loss : 0.160, state_loss : 0.043, gen_loss : 0.015, dom_loss : 0.300
+time 373.6 min, [8/15] [3200/3437] mean_loss : 0.170, state_loss : 0.036, gen_loss : 0.307, dom_loss : 0.008
+time 375.0 min, [8/15] [3300/3437] mean_loss : 0.180, state_loss : 0.044, gen_loss : 0.002, dom_loss : 0.002
+time 376.4 min, [8/15] [3400/3437] mean_loss : 0.191, state_loss : 0.030, gen_loss : 0.180, dom_loss : 0.067
+999, 2.6min
+1999, 5.1min
+2999, 7.7min
+3999, 10.3min
+4999, 12.8min
+5999, 15.4min
+6999, 18.0min
+------------------------------
+op_code: 4, is_gt_op: False, is_gt_p_state: False, is_gt_gen: False
+Epoch 8 joint accuracy :  0.5442952109618776
+Epoch 8 slot turn accuracy :  0.9746122190566211
+Epoch 8 slot turn F1:  0.9234458323345126
+Epoch 8 op accuracy :  0.975276986388056
+Epoch 8 op F1 :  {'delete': 0.013562858633281168, 'update': 0.8265585625068478, 'dontcare': 0.2760942760942761, 'carryover': 0.987076952277014}
+Epoch 8 op hit count :  {'delete': 13, 'update': 7544, 'dontcare': 82, 'carryover': 208024}
+Epoch 8 op all count :  {'delete': 1901, 'update': 10033, 'dontcare': 423, 'carryover': 208773}
+Final Joint Accuracy :  0.372
+Final slot turn F1 :  0.9095484290938874
+Latency Per Prediction : 141.769678 ms
+-----------------------------
+
+hotel 0.48031780426146625 0.9737931864692566
+train 0.8078938176737688 0.9924321806962447
+restaurant 0.6525985350540635 0.9849087315428526
+attraction 0.7010438413361169 0.9889770354906114
+taxi 0.5081240768094535 0.9758739537173785
+### Epoch 8 Score :  {'epoch': 8, 'joint_acc': 0.5442952109618776, 'slot_acc': 0.9746122190566211, 'slot_f1': 0.9234458323345126, 'op_acc': 0.975276986388056, 'op_f1': {'delete': 0.013562858633281168, 'update': 0.8265585625068478, 'dontcare': 0.2760942760942761, 'carryover': 0.987076952277014}, 'final_slot_f1': 0.9095484290938874}
+### Best Joint Acc: 0.5442952109618776 ###
+
+
+999, 2.5min
+1999, 5.0min
+2999, 7.6min
+3999, 10.1min
+4999, 12.7min
+5999, 15.2min
+6999, 17.8min
+------------------------------
+op_code: 4, is_gt_op: False, is_gt_p_state: False, is_gt_gen: False
+Epoch 8 joint accuracy :  0.5314875135722041
+Epoch 8 slot turn accuracy :  0.9729822656532302
+Epoch 8 slot turn F1:  0.9172857898236395
+Epoch 8 op accuracy :  0.9734889612739321
+Epoch 8 op F1 :  {'delete': 0.020311442112389978, 'update': 0.7948608593666704, 'dontcare': 0.28883495145631066, 'carryover': 0.9861313331164003}
+Epoch 8 op hit count :  {'delete': 15, 'update': 7455, 'dontcare': 119, 'carryover': 207591}
+Epoch 8 op all count :  {'delete': 1454, 'update': 10711, 'dontcare': 633, 'carryover': 208242}
+Final Joint Accuracy :  0.36036036036036034
+Final slot turn F1 :  0.9072235009850378
+Latency Per Prediction : 139.772210 ms
+-----------------------------
+
+hotel 0.47874806800618236 0.9720118495620939
+train 0.7090539165818922 0.9866847518933051
+restaurant 0.664469118667592 0.9860860513532357
+attraction 0.6929716399506781 0.9883271681052269
+taxi 0.5482866043613707 0.9781412253374846
+### Epoch 8 Test Score :  {'epoch': 8, 'joint_acc': 0.5314875135722041, 'slot_acc': 0.9729822656532302, 'slot_f1': 0.9172857898236395, 'op_acc': 0.9734889612739321, 'op_f1': {'delete': 0.020311442112389978, 'update': 0.7948608593666704, 'dontcare': 0.28883495145631066, 'carryover': 0.9861313331164003}, 'final_slot_f1': 0.9072235009850378}
+
+time 414.6 min, [9/15] [0/3437] mean_loss : 0.142, state_loss : 0.043, gen_loss : 0.089, dom_loss : 0.009
+time 416.0 min, [9/15] [100/3437] mean_loss : 0.164, state_loss : 0.031, gen_loss : 0.061, dom_loss : 0.021
+time 417.3 min, [9/15] [200/3437] mean_loss : 0.154, state_loss : 0.026, gen_loss : 0.025, dom_loss : 0.001
+time 418.7 min, [9/15] [300/3437] mean_loss : 0.146, state_loss : 0.017, gen_loss : 0.016, dom_loss : 0.005
+time 420.1 min, [9/15] [400/3437] mean_loss : 0.138, state_loss : 0.037, gen_loss : 0.004, dom_loss : 0.003
+time 421.5 min, [9/15] [500/3437] mean_loss : 0.145, state_loss : 0.020, gen_loss : 0.080, dom_loss : 0.009
+time 422.9 min, [9/15] [600/3437] mean_loss : 0.170, state_loss : 0.063, gen_loss : 0.354, dom_loss : 0.025
+time 424.3 min, [9/15] [700/3437] mean_loss : 0.157, state_loss : 0.022, gen_loss : 0.004, dom_loss : 0.016
+time 425.6 min, [9/15] [800/3437] mean_loss : 0.150, state_loss : 0.013, gen_loss : 0.236, dom_loss : 0.005
+time 427.0 min, [9/15] [900/3437] mean_loss : 0.142, state_loss : 0.014, gen_loss : 0.018, dom_loss : 0.001
+time 428.4 min, [9/15] [1000/3437] mean_loss : 0.150, state_loss : 0.011, gen_loss : 0.049, dom_loss : 0.217
+time 429.8 min, [9/15] [1100/3437] mean_loss : 0.155, state_loss : 0.018, gen_loss : 0.094, dom_loss : 0.091
+time 431.2 min, [9/15] [1200/3437] mean_loss : 0.141, state_loss : 0.025, gen_loss : 0.029, dom_loss : 0.008
+time 432.6 min, [9/15] [1300/3437] mean_loss : 0.143, state_loss : 0.033, gen_loss : 0.069, dom_loss : 0.002
+time 433.9 min, [9/15] [1400/3437] mean_loss : 0.180, state_loss : 0.029, gen_loss : 0.032, dom_loss : 0.025
+time 435.3 min, [9/15] [1500/3437] mean_loss : 0.149, state_loss : 0.026, gen_loss : 0.260, dom_loss : 0.002
+time 436.7 min, [9/15] [1600/3437] mean_loss : 0.156, state_loss : 0.022, gen_loss : 0.015, dom_loss : 0.002
+time 438.1 min, [9/15] [1700/3437] mean_loss : 0.156, state_loss : 0.033, gen_loss : 0.162, dom_loss : 0.002
+time 439.5 min, [9/15] [1800/3437] mean_loss : 0.141, state_loss : 0.051, gen_loss : 0.232, dom_loss : 0.010
+time 440.8 min, [9/15] [1900/3437] mean_loss : 0.151, state_loss : 0.042, gen_loss : 0.377, dom_loss : 0.002
+time 442.2 min, [9/15] [2000/3437] mean_loss : 0.168, state_loss : 0.017, gen_loss : 0.128, dom_loss : 0.005
+time 443.6 min, [9/15] [2100/3437] mean_loss : 0.161, state_loss : 0.026, gen_loss : 0.097, dom_loss : 0.040
+time 445.0 min, [9/15] [2200/3437] mean_loss : 0.177, state_loss : 0.037, gen_loss : 0.055, dom_loss : 0.002
+time 446.4 min, [9/15] [2300/3437] mean_loss : 0.152, state_loss : 0.034, gen_loss : 0.176, dom_loss : 0.002
+time 447.8 min, [9/15] [2400/3437] mean_loss : 0.151, state_loss : 0.029, gen_loss : 0.007, dom_loss : 0.008
+time 449.1 min, [9/15] [2500/3437] mean_loss : 0.148, state_loss : 0.026, gen_loss : 0.117, dom_loss : 0.010
+time 450.5 min, [9/15] [2600/3437] mean_loss : 0.148, state_loss : 0.024, gen_loss : 0.094, dom_loss : 0.001
+time 451.9 min, [9/15] [2700/3437] mean_loss : 0.174, state_loss : 0.019, gen_loss : 0.036, dom_loss : 0.194
+time 453.3 min, [9/15] [2800/3437] mean_loss : 0.170, state_loss : 0.027, gen_loss : 0.064, dom_loss : 0.013
+time 454.6 min, [9/15] [2900/3437] mean_loss : 0.133, state_loss : 0.033, gen_loss : 0.045, dom_loss : 0.022
+time 456.0 min, [9/15] [3000/3437] mean_loss : 0.153, state_loss : 0.038, gen_loss : 0.085, dom_loss : 0.004
+time 457.4 min, [9/15] [3100/3437] mean_loss : 0.152, state_loss : 0.025, gen_loss : 0.070, dom_loss : 0.017
+time 458.8 min, [9/15] [3200/3437] mean_loss : 0.141, state_loss : 0.022, gen_loss : 0.008, dom_loss : 0.004
+time 460.2 min, [9/15] [3300/3437] mean_loss : 0.144, state_loss : 0.038, gen_loss : 0.045, dom_loss : 0.014
+time 461.5 min, [9/15] [3400/3437] mean_loss : 0.169, state_loss : 0.017, gen_loss : 0.069, dom_loss : 0.082
+999, 2.6min
+1999, 5.2min
+2999, 7.7min
+3999, 10.3min
+4999, 12.9min
+5999, 15.4min
+6999, 18.0min
+------------------------------
+op_code: 4, is_gt_op: False, is_gt_p_state: False, is_gt_gen: False
+Epoch 9 joint accuracy :  0.5512142178808845
+Epoch 9 slot turn accuracy :  0.9751458418124651
+Epoch 9 slot turn F1:  0.9249091939466152
+Epoch 9 op accuracy :  0.9758739203183218
+Epoch 9 op F1 :  {'delete': 0.020078081427774678, 'update': 0.8261416461580531, 'dontcare': 0.28960817717206133, 'carryover': 0.9873883703554358}
+Epoch 9 op hit count :  {'delete': 18, 'update': 7553, 'dontcare': 85, 'carryover': 208139}
+Epoch 9 op all count :  {'delete': 1764, 'update': 10086, 'dontcare': 416, 'carryover': 208864}
+Final Joint Accuracy :  0.384
+Final slot turn F1 :  0.9123409473571792
+Latency Per Prediction : 142.115007 ms
+-----------------------------
+
+hotel 0.49512459371614304 0.974358974358987
+train 0.8162766329025498 0.9926417510769642
+restaurant 0.6396930589466341 0.9848622253226454
+attraction 0.7052192066805846 0.9894224077940215
+taxi 0.5420974889217134 0.9774987690792689
+### Epoch 9 Score :  {'epoch': 9, 'joint_acc': 0.5512142178808845, 'slot_acc': 0.9751458418124651, 'slot_f1': 0.9249091939466152, 'op_acc': 0.9758739203183218, 'op_f1': {'delete': 0.020078081427774678, 'update': 0.8261416461580531, 'dontcare': 0.28960817717206133, 'carryover': 0.9873883703554358}, 'final_slot_f1': 0.9123409473571792}
+### Best Joint Acc: 0.5512142178808845 ###
+
+
+999, 2.5min
+1999, 5.0min
+2999, 7.6min
+3999, 10.1min
+4999, 12.6min
+5999, 15.2min
+6999, 17.7min
+------------------------------
+op_code: 4, is_gt_op: False, is_gt_p_state: False, is_gt_gen: False
+Epoch 9 joint accuracy :  0.5386807817589576
+Epoch 9 slot turn accuracy :  0.9738056460368695
+Epoch 9 slot turn F1:  0.9200216097022256
+Epoch 9 op accuracy :  0.974402823018411
+Epoch 9 op F1 :  {'delete': 0.03671071953010279, 'update': 0.7978870984953579, 'dontcare': 0.28815628815628813, 'carryover': 0.9866249403429125}
+Epoch 9 op hit count :  {'delete': 25, 'update': 7477, 'dontcare': 118, 'carryover': 207762}
+Epoch 9 op all count :  {'delete': 1312, 'update': 10718, 'dontcare': 638, 'carryover': 208372}
+Final Joint Accuracy :  0.36936936936936937
+Final slot turn F1 :  0.9102389293046727
+Latency Per Prediction : 139.367744 ms
+-----------------------------
+
+hotel 0.49420401854714063 0.9734415249871318
+train 0.7277043065445914 0.9875664066915416
+restaurant 0.6603053435114504 0.9857622021744248
+attraction 0.6905055487053021 0.988560076722846
+taxi 0.5514018691588785 0.9780893042575252
+### Epoch 9 Test Score :  {'epoch': 9, 'joint_acc': 0.5386807817589576, 'slot_acc': 0.9738056460368695, 'slot_f1': 0.9200216097022256, 'op_acc': 0.974402823018411, 'op_f1': {'delete': 0.03671071953010279, 'update': 0.7978870984953579, 'dontcare': 0.28815628815628813, 'carryover': 0.9866249403429125}, 'final_slot_f1': 0.9102389293046727}
+
+time 499.8 min, [10/15] [0/3437] mean_loss : 0.104, state_loss : 0.005, gen_loss : 0.057, dom_loss : 0.042
+time 501.1 min, [10/15] [100/3437] mean_loss : 0.138, state_loss : 0.033, gen_loss : 0.199, dom_loss : 0.002
+time 502.5 min, [10/15] [200/3437] mean_loss : 0.141, state_loss : 0.007, gen_loss : 0.098, dom_loss : 0.013
+time 503.9 min, [10/15] [300/3437] mean_loss : 0.125, state_loss : 0.023, gen_loss : 0.054, dom_loss : 0.034
+time 505.3 min, [10/15] [400/3437] mean_loss : 0.111, state_loss : 0.052, gen_loss : 0.066, dom_loss : 0.003
+time 506.7 min, [10/15] [500/3437] mean_loss : 0.147, state_loss : 0.028, gen_loss : 0.066, dom_loss : 0.043
+time 508.0 min, [10/15] [600/3437] mean_loss : 0.137, state_loss : 0.034, gen_loss : 0.103, dom_loss : 0.002
+time 509.4 min, [10/15] [700/3437] mean_loss : 0.130, state_loss : 0.029, gen_loss : 0.053, dom_loss : 0.030
+time 510.8 min, [10/15] [800/3437] mean_loss : 0.145, state_loss : 0.035, gen_loss : 0.133, dom_loss : 0.002
+time 512.2 min, [10/15] [900/3437] mean_loss : 0.135, state_loss : 0.022, gen_loss : 0.024, dom_loss : 0.008
+time 513.6 min, [10/15] [1000/3437] mean_loss : 0.142, state_loss : 0.022, gen_loss : 0.105, dom_loss : 0.001
+time 515.0 min, [10/15] [1100/3437] mean_loss : 0.156, state_loss : 0.028, gen_loss : 0.094, dom_loss : 0.019
+time 516.3 min, [10/15] [1200/3437] mean_loss : 0.144, state_loss : 0.028, gen_loss : 0.081, dom_loss : 0.048
+time 517.7 min, [10/15] [1300/3437] mean_loss : 0.139, state_loss : 0.041, gen_loss : 0.024, dom_loss : 0.075
+time 519.1 min, [10/15] [1400/3437] mean_loss : 0.140, state_loss : 0.018, gen_loss : 0.119, dom_loss : 0.001
+time 520.5 min, [10/15] [1500/3437] mean_loss : 0.128, state_loss : 0.025, gen_loss : 0.087, dom_loss : 0.005
+time 521.8 min, [10/15] [1600/3437] mean_loss : 0.138, state_loss : 0.009, gen_loss : 0.046, dom_loss : 0.001
+time 523.2 min, [10/15] [1700/3437] mean_loss : 0.137, state_loss : 0.021, gen_loss : 0.035, dom_loss : 0.005
+time 524.6 min, [10/15] [1800/3437] mean_loss : 0.139, state_loss : 0.023, gen_loss : 0.077, dom_loss : 0.004
+time 526.0 min, [10/15] [1900/3437] mean_loss : 0.140, state_loss : 0.025, gen_loss : 0.216, dom_loss : 0.002
+time 527.4 min, [10/15] [2000/3437] mean_loss : 0.142, state_loss : 0.021, gen_loss : 0.034, dom_loss : 0.002
+time 528.8 min, [10/15] [2100/3437] mean_loss : 0.138, state_loss : 0.013, gen_loss : 0.149, dom_loss : 0.001
+time 530.1 min, [10/15] [2200/3437] mean_loss : 0.155, state_loss : 0.053, gen_loss : 0.346, dom_loss : 0.169
+time 531.5 min, [10/15] [2300/3437] mean_loss : 0.148, state_loss : 0.012, gen_loss : 0.026, dom_loss : 0.001
+time 532.9 min, [10/15] [2400/3437] mean_loss : 0.152, state_loss : 0.069, gen_loss : 0.111, dom_loss : 0.003
+time 534.3 min, [10/15] [2500/3437] mean_loss : 0.152, state_loss : 0.025, gen_loss : 0.028, dom_loss : 0.087
+time 535.7 min, [10/15] [2600/3437] mean_loss : 0.143, state_loss : 0.030, gen_loss : 0.057, dom_loss : 0.001
+time 537.0 min, [10/15] [2700/3437] mean_loss : 0.138, state_loss : 0.030, gen_loss : 0.013, dom_loss : 0.007
+time 538.4 min, [10/15] [2800/3437] mean_loss : 0.129, state_loss : 0.018, gen_loss : 0.057, dom_loss : 0.002
+time 539.8 min, [10/15] [2900/3437] mean_loss : 0.130, state_loss : 0.033, gen_loss : 0.003, dom_loss : 0.003
+time 541.2 min, [10/15] [3000/3437] mean_loss : 0.142, state_loss : 0.026, gen_loss : 0.019, dom_loss : 0.008
+time 542.6 min, [10/15] [3100/3437] mean_loss : 0.136, state_loss : 0.015, gen_loss : 0.133, dom_loss : 0.046
+time 544.0 min, [10/15] [3200/3437] mean_loss : 0.126, state_loss : 0.025, gen_loss : 0.098, dom_loss : 0.000
+time 545.3 min, [10/15] [3300/3437] mean_loss : 0.155, state_loss : 0.037, gen_loss : 0.013, dom_loss : 0.005
+time 546.7 min, [10/15] [3400/3437] mean_loss : 0.161, state_loss : 0.090, gen_loss : 0.078, dom_loss : 0.005
+999, 2.6min
+1999, 5.2min
+2999, 7.7min
+3999, 10.3min
+4999, 12.9min
+5999, 15.5min
+6999, 18.1min
+------------------------------
+op_code: 4, is_gt_op: False, is_gt_p_state: False, is_gt_gen: False
+Epoch 10 joint accuracy :  0.547279880613214
+Epoch 10 slot turn accuracy :  0.9750056527833864
+Epoch 10 slot turn F1:  0.9248235888899768
+Epoch 10 op accuracy :  0.9756613756613323
+Epoch 10 op F1 :  {'delete': 0.01413427561837456, 'update': 0.8325364111019511, 'dontcare': 0.30103806228373703, 'carryover': 0.9872836922843328}
+Epoch 10 op hit count :  {'delete': 14, 'update': 7574, 'dontcare': 87, 'carryover': 208073}
+Epoch 10 op all count :  {'delete': 1965, 'update': 9914, 'dontcare': 398, 'carryover': 208853}
+Final Joint Accuracy :  0.377
+Final slot turn F1 :  0.9135597945286794
+Latency Per Prediction : 142.440201 ms
+-----------------------------
+
+hotel 0.48031780426146625 0.9737931864692563
+train 0.8183723367097451 0.9927698218651814
+restaurant 0.653993721660272 0.9853272875247152
+attraction 0.7073068893528184 0.9893806541405771
+taxi 0.5317577548005908 0.9772033481043801
+### Epoch 10 Score :  {'epoch': 10, 'joint_acc': 0.547279880613214, 'slot_acc': 0.9750056527833864, 'slot_f1': 0.9248235888899768, 'op_acc': 0.9756613756613323, 'op_f1': {'delete': 0.01413427561837456, 'update': 0.8325364111019511, 'dontcare': 0.30103806228373703, 'carryover': 0.9872836922843328}, 'final_slot_f1': 0.9135597945286794}
+
+time 566.3 min, [11/15] [0/3437] mean_loss : 0.044, state_loss : 0.033, gen_loss : 0.009, dom_loss : 0.002
+time 567.7 min, [11/15] [100/3437] mean_loss : 0.134, state_loss : 0.012, gen_loss : 0.111, dom_loss : 0.022
+time 569.1 min, [11/15] [200/3437] mean_loss : 0.102, state_loss : 0.027, gen_loss : 0.193, dom_loss : 0.001
+time 570.5 min, [11/15] [300/3437] mean_loss : 0.142, state_loss : 0.022, gen_loss : 0.102, dom_loss : 0.007
+time 571.8 min, [11/15] [400/3437] mean_loss : 0.133, state_loss : 0.017, gen_loss : 0.048, dom_loss : 0.001
+time 573.2 min, [11/15] [500/3437] mean_loss : 0.132, state_loss : 0.034, gen_loss : 0.071, dom_loss : 0.024
+time 574.6 min, [11/15] [600/3437] mean_loss : 0.132, state_loss : 0.023, gen_loss : 0.093, dom_loss : 0.005
+time 576.0 min, [11/15] [700/3437] mean_loss : 0.137, state_loss : 0.039, gen_loss : 0.054, dom_loss : 0.010
+time 577.4 min, [11/15] [800/3437] mean_loss : 0.137, state_loss : 0.036, gen_loss : 0.025, dom_loss : 0.012
+time 578.7 min, [11/15] [900/3437] mean_loss : 0.119, state_loss : 0.030, gen_loss : 0.057, dom_loss : 0.018
+time 580.1 min, [11/15] [1000/3437] mean_loss : 0.137, state_loss : 0.040, gen_loss : 0.080, dom_loss : 0.001
+time 581.5 min, [11/15] [1100/3437] mean_loss : 0.124, state_loss : 0.025, gen_loss : 0.105, dom_loss : 0.002
+time 582.9 min, [11/15] [1200/3437] mean_loss : 0.138, state_loss : 0.035, gen_loss : 0.022, dom_loss : 0.005
+time 584.3 min, [11/15] [1300/3437] mean_loss : 0.114, state_loss : 0.021, gen_loss : 0.068, dom_loss : 0.001
+time 585.6 min, [11/15] [1400/3437] mean_loss : 0.123, state_loss : 0.055, gen_loss : 0.059, dom_loss : 0.205
+time 587.0 min, [11/15] [1500/3437] mean_loss : 0.138, state_loss : 0.017, gen_loss : 0.081, dom_loss : 0.032
+time 588.4 min, [11/15] [1600/3437] mean_loss : 0.138, state_loss : 0.015, gen_loss : 0.073, dom_loss : 0.001
+time 589.8 min, [11/15] [1700/3437] mean_loss : 0.122, state_loss : 0.034, gen_loss : 0.204, dom_loss : 0.002
+time 591.2 min, [11/15] [1800/3437] mean_loss : 0.126, state_loss : 0.026, gen_loss : 0.067, dom_loss : 0.002
+time 592.5 min, [11/15] [1900/3437] mean_loss : 0.114, state_loss : 0.007, gen_loss : 0.040, dom_loss : 0.075
+time 593.9 min, [11/15] [2000/3437] mean_loss : 0.131, state_loss : 0.011, gen_loss : 0.020, dom_loss : 0.001
+time 595.3 min, [11/15] [2100/3437] mean_loss : 0.111, state_loss : 0.039, gen_loss : 0.081, dom_loss : 0.002
+time 596.7 min, [11/15] [2200/3437] mean_loss : 0.140, state_loss : 0.020, gen_loss : 0.005, dom_loss : 0.001
+time 598.1 min, [11/15] [2300/3437] mean_loss : 0.134, state_loss : 0.030, gen_loss : 0.021, dom_loss : 0.002
+time 599.4 min, [11/15] [2400/3437] mean_loss : 0.125, state_loss : 0.031, gen_loss : 0.104, dom_loss : 0.039
+time 600.8 min, [11/15] [2500/3437] mean_loss : 0.147, state_loss : 0.007, gen_loss : 0.032, dom_loss : 0.001
+time 602.2 min, [11/15] [2600/3437] mean_loss : 0.138, state_loss : 0.040, gen_loss : 0.113, dom_loss : 0.011
+time 603.6 min, [11/15] [2700/3437] mean_loss : 0.132, state_loss : 0.059, gen_loss : 0.082, dom_loss : 0.003
+time 605.0 min, [11/15] [2800/3437] mean_loss : 0.136, state_loss : 0.008, gen_loss : 0.120, dom_loss : 0.003
+time 606.4 min, [11/15] [2900/3437] mean_loss : 0.144, state_loss : 0.053, gen_loss : 0.006, dom_loss : 0.007
+time 607.7 min, [11/15] [3000/3437] mean_loss : 0.131, state_loss : 0.028, gen_loss : 0.007, dom_loss : 0.067
+time 609.1 min, [11/15] [3100/3437] mean_loss : 0.135, state_loss : 0.023, gen_loss : 0.024, dom_loss : 0.002
+time 610.5 min, [11/15] [3200/3437] mean_loss : 0.130, state_loss : 0.004, gen_loss : 0.050, dom_loss : 0.001
+time 611.9 min, [11/15] [3300/3437] mean_loss : 0.140, state_loss : 0.011, gen_loss : 0.637, dom_loss : 0.001
+time 613.3 min, [11/15] [3400/3437] mean_loss : 0.122, state_loss : 0.031, gen_loss : 0.083, dom_loss : 0.000
+999, 2.6min
+1999, 5.2min
+2999, 7.7min
+3999, 10.3min
+4999, 12.9min
+5999, 15.4min
+6999, 18.0min
+------------------------------
+op_code: 4, is_gt_op: False, is_gt_p_state: False, is_gt_gen: False
+Epoch 11 joint accuracy :  0.5527065527065527
+Epoch 11 slot turn accuracy :  0.9751413195857195
+Epoch 11 slot turn F1:  0.9256323267431082
+Epoch 11 op accuracy :  0.9758422647311104
+Epoch 11 op F1 :  {'delete': 0.018065887353878853, 'update': 0.8305094039589844, 'dontcare': 0.28279386712095406, 'carryover': 0.9873705385312438}
+Epoch 11 op hit count :  {'delete': 17, 'update': 7573, 'dontcare': 83, 'carryover': 208115}
+Epoch 11 op all count :  {'delete': 1855, 'update': 10033, 'dontcare': 415, 'carryover': 208827}
+Final Joint Accuracy :  0.383
+Final slot turn F1 :  0.9148088119145642
+Latency Per Prediction : 141.542178 ms
+-----------------------------
+
+hotel 0.5005417118093174 0.9744312026002298
+train 0.8187216206776109 0.9928280358598253
+restaurant 0.6543425183118242 0.9852691547494561
+attraction 0.6918580375782881 0.9889631176061303
+taxi 0.5140324963072378 0.9763663220088601
+### Epoch 11 Score :  {'epoch': 11, 'joint_acc': 0.5527065527065527, 'slot_acc': 0.9751413195857195, 'slot_f1': 0.9256323267431082, 'op_acc': 0.9758422647311104, 'op_f1': {'delete': 0.018065887353878853, 'update': 0.8305094039589844, 'dontcare': 0.28279386712095406, 'carryover': 0.9873705385312438}, 'final_slot_f1': 0.9148088119145642}
+### Best Joint Acc: 0.5527065527065527 ###
+
+
+999, 2.5min
+1999, 5.0min
+2999, 7.6min
+3999, 10.1min
+4999, 12.6min
+5999, 15.1min
+6999, 17.7min
+------------------------------
+op_code: 4, is_gt_op: False, is_gt_p_state: False, is_gt_gen: False
+Epoch 11 joint accuracy :  0.5454668838219326
+Epoch 11 slot turn accuracy :  0.9744480636988307
+Epoch 11 slot turn F1:  0.9219323798867022
+Epoch 11 op accuracy :  0.9749411871154068
+Epoch 11 op F1 :  {'delete': 0.02921840759678597, 'update': 0.804844068159897, 'dontcare': 0.28912783751493426, 'carryover': 0.9869139530687635}
+Epoch 11 op hit count :  {'delete': 20, 'update': 7510, 'dontcare': 121, 'carryover': 207850}
+Epoch 11 op all count :  {'delete': 1335, 'update': 10612, 'dontcare': 650, 'carryover': 208443}
+Final Joint Accuracy :  0.3863863863863864
+Final slot turn F1 :  0.9150233062293927
+Latency Per Prediction : 139.102310 ms
+-----------------------------
+
+hotel 0.518160741885626 0.9738021638330864
+train 0.7256697185486606 0.987871594890931
+restaurant 0.6804302567661347 0.9869997686791662
+attraction 0.6831072749691739 0.9881490615152835
+taxi 0.5607476635514018 0.9788681204569024
+### Epoch 11 Test Score :  {'epoch': 11, 'joint_acc': 0.5454668838219326, 'slot_acc': 0.9744480636988307, 'slot_f1': 0.9219323798867022, 'op_acc': 0.9749411871154068, 'op_f1': {'delete': 0.02921840759678597, 'update': 0.804844068159897, 'dontcare': 0.28912783751493426, 'carryover': 0.9869139530687635}, 'final_slot_f1': 0.9150233062293927}
+
+time 651.4 min, [12/15] [0/3437] mean_loss : 0.071, state_loss : 0.019, gen_loss : 0.051, dom_loss : 0.001
+time 652.8 min, [12/15] [100/3437] mean_loss : 0.119, state_loss : 0.041, gen_loss : 0.046, dom_loss : 0.001
+time 654.1 min, [12/15] [200/3437] mean_loss : 0.118, state_loss : 0.041, gen_loss : 0.077, dom_loss : 0.000
+time 655.5 min, [12/15] [300/3437] mean_loss : 0.115, state_loss : 0.035, gen_loss : 0.021, dom_loss : 0.009
+time 656.9 min, [12/15] [400/3437] mean_loss : 0.127, state_loss : 0.026, gen_loss : 0.103, dom_loss : 0.074
+time 658.3 min, [12/15] [500/3437] mean_loss : 0.101, state_loss : 0.035, gen_loss : 0.032, dom_loss : 0.000
+time 659.7 min, [12/15] [600/3437] mean_loss : 0.125, state_loss : 0.018, gen_loss : 0.036, dom_loss : 0.001
+time 661.0 min, [12/15] [700/3437] mean_loss : 0.125, state_loss : 0.018, gen_loss : 0.003, dom_loss : 0.000
+time 662.4 min, [12/15] [800/3437] mean_loss : 0.124, state_loss : 0.024, gen_loss : 0.127, dom_loss : 0.006
+time 663.8 min, [12/15] [900/3437] mean_loss : 0.122, state_loss : 0.031, gen_loss : 0.005, dom_loss : 0.008
+time 665.2 min, [12/15] [1000/3437] mean_loss : 0.121, state_loss : 0.009, gen_loss : 0.066, dom_loss : 0.007
+time 666.6 min, [12/15] [1100/3437] mean_loss : 0.116, state_loss : 0.017, gen_loss : 0.081, dom_loss : 0.002
+time 667.9 min, [12/15] [1200/3437] mean_loss : 0.099, state_loss : 0.047, gen_loss : 0.030, dom_loss : 0.070
+time 669.3 min, [12/15] [1300/3437] mean_loss : 0.122, state_loss : 0.011, gen_loss : 0.240, dom_loss : 0.005
+time 670.7 min, [12/15] [1400/3437] mean_loss : 0.110, state_loss : 0.009, gen_loss : 0.010, dom_loss : 0.001
+time 672.1 min, [12/15] [1500/3437] mean_loss : 0.120, state_loss : 0.039, gen_loss : 0.062, dom_loss : 0.000
+time 673.5 min, [12/15] [1600/3437] mean_loss : 0.120, state_loss : 0.013, gen_loss : 0.004, dom_loss : 0.000
+time 674.8 min, [12/15] [1700/3437] mean_loss : 0.118, state_loss : 0.037, gen_loss : 0.008, dom_loss : 0.000
+time 676.2 min, [12/15] [1800/3437] mean_loss : 0.121, state_loss : 0.052, gen_loss : 0.038, dom_loss : 0.001
+time 677.6 min, [12/15] [1900/3437] mean_loss : 0.121, state_loss : 0.031, gen_loss : 0.045, dom_loss : 0.000
+time 679.0 min, [12/15] [2000/3437] mean_loss : 0.111, state_loss : 0.022, gen_loss : 0.070, dom_loss : 0.007
+time 680.4 min, [12/15] [2100/3437] mean_loss : 0.122, state_loss : 0.042, gen_loss : 0.069, dom_loss : 0.001
+time 681.7 min, [12/15] [2200/3437] mean_loss : 0.114, state_loss : 0.029, gen_loss : 0.024, dom_loss : 0.002
+time 683.1 min, [12/15] [2300/3437] mean_loss : 0.106, state_loss : 0.063, gen_loss : 0.114, dom_loss : 0.090
+time 684.5 min, [12/15] [2400/3437] mean_loss : 0.112, state_loss : 0.018, gen_loss : 0.011, dom_loss : 0.002
+time 685.9 min, [12/15] [2500/3437] mean_loss : 0.127, state_loss : 0.039, gen_loss : 0.100, dom_loss : 0.001
+time 687.3 min, [12/15] [2600/3437] mean_loss : 0.127, state_loss : 0.029, gen_loss : 0.121, dom_loss : 0.001
+time 688.6 min, [12/15] [2700/3437] mean_loss : 0.114, state_loss : 0.008, gen_loss : 0.007, dom_loss : 0.002
+time 690.0 min, [12/15] [2800/3437] mean_loss : 0.125, state_loss : 0.010, gen_loss : 0.138, dom_loss : 0.001
+time 691.4 min, [12/15] [2900/3437] mean_loss : 0.108, state_loss : 0.041, gen_loss : 0.125, dom_loss : 0.001
+time 692.8 min, [12/15] [3000/3437] mean_loss : 0.130, state_loss : 0.043, gen_loss : 0.361, dom_loss : 0.001
+time 694.2 min, [12/15] [3100/3437] mean_loss : 0.116, state_loss : 0.026, gen_loss : 0.120, dom_loss : 0.000
+time 695.6 min, [12/15] [3200/3437] mean_loss : 0.117, state_loss : 0.032, gen_loss : 0.074, dom_loss : 0.001
+time 696.9 min, [12/15] [3300/3437] mean_loss : 0.124, state_loss : 0.035, gen_loss : 0.238, dom_loss : 0.000
+time 698.3 min, [12/15] [3400/3437] mean_loss : 0.104, state_loss : 0.027, gen_loss : 0.003, dom_loss : 0.001
+999, 2.6min
+1999, 5.2min
+2999, 7.8min
+3999, 10.4min
+4999, 13.0min
+5999, 15.5min
+6999, 18.1min
+------------------------------
+op_code: 4, is_gt_op: False, is_gt_p_state: False, is_gt_gen: False
+Epoch 12 joint accuracy :  0.5560982227648894
+Epoch 12 slot turn accuracy :  0.9759869759869321
+Epoch 12 slot turn F1:  0.9267941261438836
+Epoch 12 op accuracy :  0.9766833989055774
+Epoch 12 op F1 :  {'delete': 0.021917808219178082, 'update': 0.8371068143006666, 'dontcare': 0.25817555938037867, 'carryover': 0.9878136404703807}
+Epoch 12 op hit count :  {'delete': 20, 'update': 7598, 'dontcare': 75, 'carryover': 208281}
+Epoch 12 op all count :  {'delete': 1800, 'update': 9888, 'dontcare': 441, 'carryover': 209001}
+Final Joint Accuracy :  0.39
+Final slot turn F1 :  0.9161668646757622
+Latency Per Prediction : 142.904807 ms
+-----------------------------
+
+hotel 0.5081256771397616 0.9754062838570009
+train 0.8208173244848062 0.9928978926533986
+restaurant 0.6588768747820021 0.9858504825020424
+attraction 0.7081419624217119 0.9896311760612448
+taxi 0.51698670605613 0.9766125061546009
+### Epoch 12 Score :  {'epoch': 12, 'joint_acc': 0.5560982227648894, 'slot_acc': 0.9759869759869321, 'slot_f1': 0.9267941261438836, 'op_acc': 0.9766833989055774, 'op_f1': {'delete': 0.021917808219178082, 'update': 0.8371068143006666, 'dontcare': 0.25817555938037867, 'carryover': 0.9878136404703807}, 'final_slot_f1': 0.9161668646757622}
+### Best Joint Acc: 0.5560982227648894 ###
+
+
+999, 2.5min
+1999, 5.0min
+2999, 7.6min
+3999, 10.1min
+4999, 12.7min
+5999, 15.2min
+6999, 17.8min
+------------------------------
+op_code: 4, is_gt_op: False, is_gt_p_state: False, is_gt_gen: False
+Epoch 12 joint accuracy :  0.5481813246471227
+Epoch 12 slot turn accuracy :  0.9742987694534457
+Epoch 12 slot turn F1:  0.9213344605773203
+Epoch 12 op accuracy :  0.974828085414358
+Epoch 12 op F1 :  {'delete': 0.030215827338129497, 'update': 0.8093652668886262, 'dontcare': 0.22921348314606743, 'carryover': 0.9868369193072762}
+Epoch 12 op hit count :  {'delete': 21, 'update': 7536, 'dontcare': 102, 'carryover': 207817}
+Epoch 12 op all count :  {'delete': 1359, 'update': 10536, 'dontcare': 726, 'carryover': 208419}
+Final Joint Accuracy :  0.3883883883883884
+Final slot turn F1 :  0.9138186936502131
+Latency Per Prediction : 139.854780 ms
+-----------------------------
+
+hotel 0.5139103554868625 0.973660484286461
+train 0.7209223465581553 0.9875098903583213
+restaurant 0.6793893129770993 0.9868841082581622
+attraction 0.6814632141389232 0.9881079599945268
+taxi 0.5560747663551402 0.9791277258566947
+### Epoch 12 Test Score :  {'epoch': 12, 'joint_acc': 0.5481813246471227, 'slot_acc': 0.9742987694534457, 'slot_f1': 0.9213344605773203, 'op_acc': 0.974828085414358, 'op_f1': {'delete': 0.030215827338129497, 'update': 0.8093652668886262, 'dontcare': 0.22921348314606743, 'carryover': 0.9868369193072762}, 'final_slot_f1': 0.9138186936502131}
+
+time 736.7 min, [13/15] [0/3437] mean_loss : 0.090, state_loss : 0.049, gen_loss : 0.037, dom_loss : 0.005
+time 738.1 min, [13/15] [100/3437] mean_loss : 0.105, state_loss : 0.024, gen_loss : 0.136, dom_loss : 0.001
+time 739.5 min, [13/15] [200/3437] mean_loss : 0.120, state_loss : 0.007, gen_loss : 0.035, dom_loss : 0.046
+time 740.8 min, [13/15] [300/3437] mean_loss : 0.123, state_loss : 0.024, gen_loss : 0.122, dom_loss : 0.010
+time 742.2 min, [13/15] [400/3437] mean_loss : 0.113, state_loss : 0.015, gen_loss : 0.005, dom_loss : 0.000
+time 743.6 min, [13/15] [500/3437] mean_loss : 0.127, state_loss : 0.053, gen_loss : 0.123, dom_loss : 0.045
+time 745.0 min, [13/15] [600/3437] mean_loss : 0.104, state_loss : 0.009, gen_loss : 0.079, dom_loss : 0.002
+time 746.3 min, [13/15] [700/3437] mean_loss : 0.123, state_loss : 0.018, gen_loss : 0.141, dom_loss : 0.004
+time 747.7 min, [13/15] [800/3437] mean_loss : 0.095, state_loss : 0.020, gen_loss : 0.004, dom_loss : 0.001
+time 749.1 min, [13/15] [900/3437] mean_loss : 0.114, state_loss : 0.032, gen_loss : 0.014, dom_loss : 0.000
+time 750.5 min, [13/15] [1000/3437] mean_loss : 0.122, state_loss : 0.016, gen_loss : 0.107, dom_loss : 0.000
+time 751.9 min, [13/15] [1100/3437] mean_loss : 0.118, state_loss : 0.026, gen_loss : 0.104, dom_loss : 0.000
+time 753.3 min, [13/15] [1200/3437] mean_loss : 0.111, state_loss : 0.011, gen_loss : 0.087, dom_loss : 0.002
+time 754.6 min, [13/15] [1300/3437] mean_loss : 0.110, state_loss : 0.051, gen_loss : 0.131, dom_loss : 0.000
+time 756.0 min, [13/15] [1400/3437] mean_loss : 0.116, state_loss : 0.016, gen_loss : 0.003, dom_loss : 0.000
+time 757.4 min, [13/15] [1500/3437] mean_loss : 0.115, state_loss : 0.020, gen_loss : 0.003, dom_loss : 0.000
+time 758.7 min, [13/15] [1600/3437] mean_loss : 0.133, state_loss : 0.111, gen_loss : 0.075, dom_loss : 0.064
+time 760.1 min, [13/15] [1700/3437] mean_loss : 0.117, state_loss : 0.015, gen_loss : 0.030, dom_loss : 0.000
+time 761.4 min, [13/15] [1800/3437] mean_loss : 0.116, state_loss : 0.022, gen_loss : 0.029, dom_loss : 0.000
+time 762.8 min, [13/15] [1900/3437] mean_loss : 0.119, state_loss : 0.013, gen_loss : 0.279, dom_loss : 0.000
+time 764.2 min, [13/15] [2000/3437] mean_loss : 0.113, state_loss : 0.035, gen_loss : 0.054, dom_loss : 0.128
+time 765.5 min, [13/15] [2100/3437] mean_loss : 0.118, state_loss : 0.032, gen_loss : 0.002, dom_loss : 0.000
+time 766.9 min, [13/15] [2200/3437] mean_loss : 0.107, state_loss : 0.009, gen_loss : 0.019, dom_loss : 0.028
+time 768.3 min, [13/15] [2300/3437] mean_loss : 0.113, state_loss : 0.018, gen_loss : 0.082, dom_loss : 0.000
+time 769.6 min, [13/15] [2400/3437] mean_loss : 0.112, state_loss : 0.034, gen_loss : 0.018, dom_loss : 0.000
+time 771.0 min, [13/15] [2500/3437] mean_loss : 0.099, state_loss : 0.025, gen_loss : 0.031, dom_loss : 0.001
+time 772.4 min, [13/15] [2600/3437] mean_loss : 0.130, state_loss : 0.018, gen_loss : 0.007, dom_loss : 0.000
+time 773.7 min, [13/15] [2700/3437] mean_loss : 0.106, state_loss : 0.033, gen_loss : 0.062, dom_loss : 0.000
+time 775.1 min, [13/15] [2800/3437] mean_loss : 0.122, state_loss : 0.014, gen_loss : 0.057, dom_loss : 0.001
+time 776.5 min, [13/15] [2900/3437] mean_loss : 0.102, state_loss : 0.040, gen_loss : 0.004, dom_loss : 0.002
+time 777.9 min, [13/15] [3000/3437] mean_loss : 0.113, state_loss : 0.030, gen_loss : 0.046, dom_loss : 0.005
+time 779.2 min, [13/15] [3100/3437] mean_loss : 0.115, state_loss : 0.018, gen_loss : 0.043, dom_loss : 0.115
+time 780.6 min, [13/15] [3200/3437] mean_loss : 0.097, state_loss : 0.024, gen_loss : 0.116, dom_loss : 0.000
+time 782.0 min, [13/15] [3300/3437] mean_loss : 0.112, state_loss : 0.028, gen_loss : 0.062, dom_loss : 0.001
+time 783.4 min, [13/15] [3400/3437] mean_loss : 0.113, state_loss : 0.022, gen_loss : 0.060, dom_loss : 0.000
+999, 2.6min
+1999, 5.2min
+2999, 7.7min
+3999, 10.3min
+4999, 12.9min
+5999, 15.4min
+6999, 18.0min
+------------------------------
+op_code: 4, is_gt_op: False, is_gt_p_state: False, is_gt_gen: False
+Epoch 13 joint accuracy :  0.5555555555555556
+Epoch 13 slot turn accuracy :  0.9758151313706427
+Epoch 13 slot turn F1:  0.9271629382264001
+Epoch 13 op accuracy :  0.9764663320218443
+Epoch 13 op F1 :  {'delete': 0.023772609819121448, 'update': 0.8366639141205614, 'dontcare': 0.33928571428571425, 'carryover': 0.9877087286527514}
+Epoch 13 op hit count :  {'delete': 23, 'update': 7599, 'dontcare': 95, 'carryover': 208209}
+Epoch 13 op all count :  {'delete': 1904, 'update': 9897, 'dontcare': 365, 'carryover': 208964}
+Final Joint Accuracy :  0.389
+Final slot turn F1 :  0.9170482357174824
+Latency Per Prediction : 141.703959 ms
+-----------------------------
+
+hotel 0.5092091007583965 0.9753701697363794
+train 0.8124345092560251 0.9925602514844617
+restaurant 0.6613184513428672 0.9857574700616283
+attraction 0.7064718162839249 0.9895894224078002
+taxi 0.5361890694239291 0.9765632693254532
+### Epoch 13 Score :  {'epoch': 13, 'joint_acc': 0.5555555555555556, 'slot_acc': 0.9758151313706427, 'slot_f1': 0.9271629382264001, 'op_acc': 0.9764663320218443, 'op_f1': {'delete': 0.023772609819121448, 'update': 0.8366639141205614, 'dontcare': 0.33928571428571425, 'carryover': 0.9877087286527514}, 'final_slot_f1': 0.9170482357174824}
+
+time 802.9 min, [14/15] [0/3437] mean_loss : 0.147, state_loss : 0.035, gen_loss : 0.111, dom_loss : 0.001
+time 804.2 min, [14/15] [100/3437] mean_loss : 0.114, state_loss : 0.040, gen_loss : 0.077, dom_loss : 0.004
+time 805.6 min, [14/15] [200/3437] mean_loss : 0.111, state_loss : 0.028, gen_loss : 0.007, dom_loss : 0.001
+time 807.0 min, [14/15] [300/3437] mean_loss : 0.117, state_loss : 0.017, gen_loss : 0.080, dom_loss : 0.001
+time 808.4 min, [14/15] [400/3437] mean_loss : 0.102, state_loss : 0.021, gen_loss : 0.322, dom_loss : 0.001
+time 809.8 min, [14/15] [500/3437] mean_loss : 0.111, state_loss : 0.021, gen_loss : 0.125, dom_loss : 0.001
+time 811.1 min, [14/15] [600/3437] mean_loss : 0.119, state_loss : 0.028, gen_loss : 0.083, dom_loss : 0.000
+time 812.5 min, [14/15] [700/3437] mean_loss : 0.111, state_loss : 0.009, gen_loss : 0.034, dom_loss : 0.000
+time 813.9 min, [14/15] [800/3437] mean_loss : 0.096, state_loss : 0.035, gen_loss : 0.121, dom_loss : 0.000
+time 815.3 min, [14/15] [900/3437] mean_loss : 0.096, state_loss : 0.041, gen_loss : 0.056, dom_loss : 0.012
+time 816.7 min, [14/15] [1000/3437] mean_loss : 0.104, state_loss : 0.023, gen_loss : 0.100, dom_loss : 0.031
+time 818.1 min, [14/15] [1100/3437] mean_loss : 0.095, state_loss : 0.020, gen_loss : 0.033, dom_loss : 0.000
+time 819.4 min, [14/15] [1200/3437] mean_loss : 0.111, state_loss : 0.060, gen_loss : 0.124, dom_loss : 0.001
+time 820.8 min, [14/15] [1300/3437] mean_loss : 0.115, state_loss : 0.008, gen_loss : 0.105, dom_loss : 0.000
+time 822.2 min, [14/15] [1400/3437] mean_loss : 0.097, state_loss : 0.019, gen_loss : 0.135, dom_loss : 0.001
+time 823.6 min, [14/15] [1500/3437] mean_loss : 0.107, state_loss : 0.018, gen_loss : 0.003, dom_loss : 0.055
+time 824.9 min, [14/15] [1600/3437] mean_loss : 0.115, state_loss : 0.011, gen_loss : 0.064, dom_loss : 0.038
+time 826.3 min, [14/15] [1700/3437] mean_loss : 0.107, state_loss : 0.018, gen_loss : 0.044, dom_loss : 0.061
+time 827.7 min, [14/15] [1800/3437] mean_loss : 0.105, state_loss : 0.024, gen_loss : 0.032, dom_loss : 0.009
+time 829.1 min, [14/15] [1900/3437] mean_loss : 0.099, state_loss : 0.044, gen_loss : 0.147, dom_loss : 0.000
+time 830.5 min, [14/15] [2000/3437] mean_loss : 0.100, state_loss : 0.023, gen_loss : 0.043, dom_loss : 0.067
+time 831.8 min, [14/15] [2100/3437] mean_loss : 0.105, state_loss : 0.034, gen_loss : 0.008, dom_loss : 0.002
+time 833.2 min, [14/15] [2200/3437] mean_loss : 0.113, state_loss : 0.016, gen_loss : 0.085, dom_loss : 0.000
+time 834.6 min, [14/15] [2300/3437] mean_loss : 0.123, state_loss : 0.021, gen_loss : 0.055, dom_loss : 0.001
+time 836.0 min, [14/15] [2400/3437] mean_loss : 0.098, state_loss : 0.020, gen_loss : 0.003, dom_loss : 0.001
+time 837.3 min, [14/15] [2500/3437] mean_loss : 0.088, state_loss : 0.038, gen_loss : 0.028, dom_loss : 0.000
+time 838.7 min, [14/15] [2600/3437] mean_loss : 0.091, state_loss : 0.028, gen_loss : 0.117, dom_loss : 0.001
+time 840.1 min, [14/15] [2700/3437] mean_loss : 0.107, state_loss : 0.050, gen_loss : 0.023, dom_loss : 0.024
+time 841.5 min, [14/15] [2800/3437] mean_loss : 0.121, state_loss : 0.030, gen_loss : 0.175, dom_loss : 0.109
+time 842.9 min, [14/15] [2900/3437] mean_loss : 0.120, state_loss : 0.022, gen_loss : 0.015, dom_loss : 0.070
+time 844.3 min, [14/15] [3000/3437] mean_loss : 0.106, state_loss : 0.016, gen_loss : 0.053, dom_loss : 0.001
+time 845.6 min, [14/15] [3100/3437] mean_loss : 0.124, state_loss : 0.044, gen_loss : 0.140, dom_loss : 0.000
+time 847.0 min, [14/15] [3200/3437] mean_loss : 0.109, state_loss : 0.037, gen_loss : 0.064, dom_loss : 0.000
+time 848.4 min, [14/15] [3300/3437] mean_loss : 0.097, state_loss : 0.015, gen_loss : 0.117, dom_loss : 0.001
+time 849.8 min, [14/15] [3400/3437] mean_loss : 0.104, state_loss : 0.019, gen_loss : 0.002, dom_loss : 0.050
+999, 2.6min
+1999, 5.1min
+2999, 7.7min
+3999, 10.3min
+4999, 12.8min
+5999, 15.4min
+6999, 17.9min
+------------------------------
+op_code: 4, is_gt_op: False, is_gt_p_state: False, is_gt_gen: False
+Epoch 14 joint accuracy :  0.5573192239858906
+Epoch 14 slot turn accuracy :  0.9759688870799539
+Epoch 14 slot turn F1:  0.9279664731446196
+Epoch 14 op accuracy :  0.9766381766381337
+Epoch 14 op F1 :  {'delete': 0.020629190304280558, 'update': 0.8388128861429833, 'dontcare': 0.344582593250444, 'carryover': 0.9878044731162393}
+Epoch 14 op hit count :  {'delete': 20, 'update': 7603, 'dontcare': 97, 'carryover': 208244}
+Epoch 14 op all count :  {'delete': 1910, 'update': 9869, 'dontcare': 359, 'carryover': 208992}
+Final Joint Accuracy :  0.394
+Final slot turn F1 :  0.9183246106480932
+Latency Per Prediction : 141.057384 ms
+-----------------------------
+
+hotel 0.5081256771397616 0.9754664740580354
+train 0.8187216206776109 0.992862964256612
+restaurant 0.6623648412975236 0.9859318683874043
+attraction 0.6947807933194154 0.9890327070285382
+taxi 0.5391432791728212 0.9776464795667136
+### Epoch 14 Score :  {'epoch': 14, 'joint_acc': 0.5573192239858906, 'slot_acc': 0.9759688870799539, 'slot_f1': 0.9279664731446196, 'op_acc': 0.9766381766381337, 'op_f1': {'delete': 0.020629190304280558, 'update': 0.8388128861429833, 'dontcare': 0.344582593250444, 'carryover': 0.9878044731162393}, 'final_slot_f1': 0.9183246106480932}
+### Best Joint Acc: 0.5573192239858906 ###
+
+
+999, 2.4min
+1999, 4.9min
+2999, 7.5min
+3999, 10.0min
+4999, 12.5min
+5999, 15.1min
+6999, 17.6min
+------------------------------
+op_code: 4, is_gt_op: False, is_gt_p_state: False, is_gt_gen: False
+Epoch 14 joint accuracy :  0.5507600434310532
+Epoch 14 slot turn accuracy :  0.9752669200144269
+Epoch 14 slot turn F1:  0.9239486126122161
+Epoch 14 op accuracy :  0.9757826637712135
+Epoch 14 op F1 :  {'delete': 0.031724137931034485, 'update': 0.8132708568966446, 'dontcare': 0.353393085787452, 'carryover': 0.9873481420995913}
+Epoch 14 op hit count :  {'delete': 23, 'update': 7550, 'dontcare': 138, 'carryover': 207976}
+Epoch 14 op all count :  {'delete': 1415, 'update': 10456, 'dontcare': 560, 'carryover': 208609}
+Final Joint Accuracy :  0.3913913913913914
+Final slot turn F1 :  0.9160109071514932
+Latency Per Prediction : 138.394800 ms
+-----------------------------
+
+hotel 0.5158423493044823 0.97456208140135
+train 0.7293997965412004 0.9877359556912021
+restaurant 0.6918806384455239 0.9874971084894825
+attraction 0.7081792026304973 0.9892314015618644
+taxi 0.5467289719626168 0.9793354101765288
+### Epoch 14 Test Score :  {'epoch': 14, 'joint_acc': 0.5507600434310532, 'slot_acc': 0.9752669200144269, 'slot_f1': 0.9239486126122161, 'op_acc': 0.9757826637712135, 'op_f1': {'delete': 0.031724137931034485, 'update': 0.8132708568966446, 'dontcare': 0.353393085787452, 'carryover': 0.9873481420995913}, 'final_slot_f1': 0.9160109071514932}
+
+time 887.7 min, [15/15] [0/3437] mean_loss : 0.051, state_loss : 0.049, gen_loss : 0.002, dom_loss : 0.000
+time 889.1 min, [15/15] [100/3437] mean_loss : 0.110, state_loss : 0.005, gen_loss : 0.042, dom_loss : 0.003
+time 890.4 min, [15/15] [200/3437] mean_loss : 0.109, state_loss : 0.010, gen_loss : 0.024, dom_loss : 0.001
+time 891.8 min, [15/15] [300/3437] mean_loss : 0.097, state_loss : 0.014, gen_loss : 0.102, dom_loss : 0.000
+time 893.2 min, [15/15] [400/3437] mean_loss : 0.092, state_loss : 0.073, gen_loss : 0.031, dom_loss : 0.000
+time 894.6 min, [15/15] [500/3437] mean_loss : 0.104, state_loss : 0.025, gen_loss : 0.161, dom_loss : 0.000
+time 896.0 min, [15/15] [600/3437] mean_loss : 0.098, state_loss : 0.031, gen_loss : 0.028, dom_loss : 0.036
+time 897.3 min, [15/15] [700/3437] mean_loss : 0.095, state_loss : 0.009, gen_loss : 0.102, dom_loss : 0.000
+time 898.7 min, [15/15] [800/3437] mean_loss : 0.096, state_loss : 0.014, gen_loss : 0.132, dom_loss : 0.000
+time 900.1 min, [15/15] [900/3437] mean_loss : 0.097, state_loss : 0.012, gen_loss : 0.012, dom_loss : 0.000
+time 901.5 min, [15/15] [1000/3437] mean_loss : 0.104, state_loss : 0.016, gen_loss : 0.062, dom_loss : 0.000
+time 902.9 min, [15/15] [1100/3437] mean_loss : 0.102, state_loss : 0.047, gen_loss : 0.134, dom_loss : 0.066
+time 904.2 min, [15/15] [1200/3437] mean_loss : 0.099, state_loss : 0.026, gen_loss : 0.032, dom_loss : 0.000
+time 905.6 min, [15/15] [1300/3437] mean_loss : 0.105, state_loss : 0.025, gen_loss : 0.118, dom_loss : 0.001
+time 907.0 min, [15/15] [1400/3437] mean_loss : 0.106, state_loss : 0.036, gen_loss : 0.185, dom_loss : 0.000
+time 908.4 min, [15/15] [1500/3437] mean_loss : 0.103, state_loss : 0.017, gen_loss : 0.022, dom_loss : 0.001
+time 909.8 min, [15/15] [1600/3437] mean_loss : 0.113, state_loss : 0.047, gen_loss : 0.129, dom_loss : 0.003
+time 911.1 min, [15/15] [1700/3437] mean_loss : 0.104, state_loss : 0.012, gen_loss : 0.079, dom_loss : 0.000
+time 912.5 min, [15/15] [1800/3437] mean_loss : 0.108, state_loss : 0.035, gen_loss : 0.032, dom_loss : 0.012
+time 913.9 min, [15/15] [1900/3437] mean_loss : 0.109, state_loss : 0.018, gen_loss : 0.065, dom_loss : 0.001
+time 915.3 min, [15/15] [2000/3437] mean_loss : 0.100, state_loss : 0.039, gen_loss : 0.019, dom_loss : 0.001
+time 916.7 min, [15/15] [2100/3437] mean_loss : 0.088, state_loss : 0.029, gen_loss : 0.019, dom_loss : 0.000
+time 918.0 min, [15/15] [2200/3437] mean_loss : 0.109, state_loss : 0.037, gen_loss : 0.171, dom_loss : 0.000
+time 919.4 min, [15/15] [2300/3437] mean_loss : 0.092, state_loss : 0.010, gen_loss : 0.003, dom_loss : 0.040
+time 920.8 min, [15/15] [2400/3437] mean_loss : 0.097, state_loss : 0.022, gen_loss : 0.069, dom_loss : 0.000
+time 922.2 min, [15/15] [2500/3437] mean_loss : 0.102, state_loss : 0.030, gen_loss : 0.004, dom_loss : 0.000
+time 923.6 min, [15/15] [2600/3437] mean_loss : 0.107, state_loss : 0.034, gen_loss : 0.006, dom_loss : 0.001
+time 924.9 min, [15/15] [2700/3437] mean_loss : 0.102, state_loss : 0.047, gen_loss : 0.086, dom_loss : 0.003
+time 926.3 min, [15/15] [2800/3437] mean_loss : 0.117, state_loss : 0.019, gen_loss : 0.121, dom_loss : 0.005
+time 927.7 min, [15/15] [2900/3437] mean_loss : 0.110, state_loss : 0.032, gen_loss : 0.016, dom_loss : 0.003
+time 929.1 min, [15/15] [3000/3437] mean_loss : 0.096, state_loss : 0.012, gen_loss : 0.001, dom_loss : 0.000
+time 930.4 min, [15/15] [3100/3437] mean_loss : 0.093, state_loss : 0.021, gen_loss : 0.143, dom_loss : 0.001
+time 931.8 min, [15/15] [3200/3437] mean_loss : 0.103, state_loss : 0.004, gen_loss : 0.088, dom_loss : 0.001
+time 933.2 min, [15/15] [3300/3437] mean_loss : 0.104, state_loss : 0.046, gen_loss : 0.007, dom_loss : 0.028
+time 934.6 min, [15/15] [3400/3437] mean_loss : 0.092, state_loss : 0.014, gen_loss : 0.054, dom_loss : 0.000
+999, 2.6min
+1999, 5.2min
+2999, 7.7min
+3999, 10.3min
+4999, 12.9min
+5999, 15.4min
+6999, 18.0min
+------------------------------
+op_code: 4, is_gt_op: False, is_gt_p_state: False, is_gt_gen: False
+Epoch 15 joint accuracy :  0.564645231311898
+Epoch 15 slot turn accuracy :  0.9762854429520665
+Epoch 15 slot turn F1:  0.9285475650096263
+Epoch 15 op accuracy :  0.976945688056757
+Epoch 15 op F1 :  {'delete': 0.023206751054852322, 'update': 0.8400309119010818, 'dontcare': 0.3381294964028777, 'carryover': 0.987958035722755}
+Epoch 15 op hit count :  {'delete': 22, 'update': 7609, 'dontcare': 94, 'carryover': 208307}
+Epoch 15 op all count :  {'delete': 1868, 'update': 9841, 'dontcare': 368, 'carryover': 209053}
+Final Joint Accuracy :  0.399
+Final slot turn F1 :  0.9183407613318462
+Latency Per Prediction : 141.530687 ms
+-----------------------------
+
+hotel 0.5211267605633803 0.9760322619477667
+train 0.8208173244848062 0.9928047502619676
+restaurant 0.6679455877223579 0.986164399488439
+attraction 0.6997912317327766 0.9892832289492061
+taxi 0.5332348596750369 0.9771541112752318
+### Epoch 15 Score :  {'epoch': 15, 'joint_acc': 0.564645231311898, 'slot_acc': 0.9762854429520665, 'slot_f1': 0.9285475650096263, 'op_acc': 0.976945688056757, 'op_f1': {'delete': 0.023206751054852322, 'update': 0.8400309119010818, 'dontcare': 0.3381294964028777, 'carryover': 0.987958035722755}, 'final_slot_f1': 0.9183407613318462}
+### Best Joint Acc: 0.564645231311898 ###
+
+
+999, 2.5min
+1999, 4.9min
+2999, 7.6min
+3999, 10.0min
+4999, 12.6min
+5999, 15.1min
+6999, 17.6min
+/pytorch/torch/csrc/utils/python_arg_parser.cpp:756: UserWarning: This overload of add_ is deprecated:
+	add_(Number alpha, Tensor other)
+Consider using one of the following signatures instead:
+	add_(Tensor other, *, Number alpha)
+------------------------------
+op_code: 4, is_gt_op: False, is_gt_p_state: False, is_gt_gen: False
+Epoch 15 joint accuracy :  0.5534744842562432
+Epoch 15 slot turn accuracy :  0.9756740861382059
+Epoch 15 slot turn F1:  0.9249954757030874
+Epoch 15 op accuracy :  0.9762079261671601
+Epoch 15 op F1 :  {'delete': 0.034934497816593885, 'update': 0.8153223630968437, 'dontcare': 0.32997481108312343, 'carryover': 0.9875716994520346}
+Epoch 15 op hit count :  {'delete': 24, 'update': 7556, 'dontcare': 131, 'carryover': 208070}
+Epoch 15 op all count :  {'delete': 1338, 'update': 10430, 'dontcare': 592, 'carryover': 208680}
+Final Joint Accuracy :  0.39039039039039036
+Final slot turn F1 :  0.9166763820537805
+Latency Per Prediction : 138.790865 ms
+-----------------------------
+
+hotel 0.5200927357032458 0.9753219989696136
+train 0.7239742285520515 0.9874759805583887
+restaurant 0.6953504510756419 0.9876127689104863
+attraction 0.7110563090834361 0.9893821071379706
+taxi 0.559190031152648 0.9795430944963626
+### Epoch 15 Test Score :  {'epoch': 15, 'joint_acc': 0.5534744842562432, 'slot_acc': 0.9756740861382059, 'slot_f1': 0.9249954757030874, 'op_acc': 0.9762079261671601, 'op_f1': {'delete': 0.034934497816593885, 'update': 0.8153223630968437, 'dontcare': 0.32997481108312343, 'carryover': 0.9875716994520346}, 'final_slot_f1': 0.9166763820537805}
