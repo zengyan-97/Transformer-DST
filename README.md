@@ -75,13 +75,13 @@ taxi 0.559190031152648 0.9795430944963626
 ```
 
 You can download Transformer-DST at 15-th epoch from [here](https://drive.google.com/file/d/19hGZGt33K-bz3bf6HaHKmLTsKMC2yp93/view?usp=sharing).
-
+(I will upload the model checkpoint on MultiWoz 2.0 later.)
 
 
 
 ## Reproducibility
 This code is based on open-source code of [SOM-DST](https://github.com/clovaai/som-dst) (Thanks!). 
-We can reproduce our experimental results on a P100 GPU device using 42 as random seed. 
+We can reproduce all of our experimental results on a P100 GPU device using 42 as random seed. (I only tried several seeds, and maybe you can get better results.) 
 
 
 ## Citation
@@ -97,6 +97,5 @@ We can reproduce our experimental results on a P100 GPU device using 42 as rando
 
 
 ## Contact
-
-If you have any questions, feel free to contact Yan Zeng ([yan.zeng@umontreal.ca](mailto:yan.zeng@umontreal.ca)).
+If you encounter any issue when reproducing our results, feel free to contact Yan Zeng ([yan.zeng@umontreal.ca](mailto:yan.zeng@umontreal.ca)). (Please follow the code requirements first.)
 
