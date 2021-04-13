@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b1cfccbf-fa3f-4225-a16c-ebd266fcad5c" name="trans-dst" url="http://arcade.iro.umontreal.ca">
+        <fileTransfer host="arcade.iro.umontreal.ca" port="22" rootFolder="/u/zengyan" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

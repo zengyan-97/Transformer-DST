@@ -332,16 +332,6 @@ def main(args):
 
             model.zero_grad()
 
-            if step < 1:
-                print("JUST DEBUG")
-                try:
-                    eval_res = model_evaluation(model, dev_data_raw[:10], tokenizer, slot_meta, epoch + 1, args.op_code,
-                                                use_full_slot=args.use_full_slot, use_dt_only=args.use_dt_only, no_dial=args.no_dial, use_cls_only=args.use_cls_only, n_gpu=n_gpu)
-                except ZeroDivisionError:
-                    pass
-                print("DONE")
-                model.train()
-
             if step % 100 == 0:
                 try:
                     loss_g = loss_g.item()

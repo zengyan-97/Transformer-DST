@@ -1,8 +1,3 @@
-"""
-SOM-DST
-Copyright (c) 2020-present NAVER Corp.
-MIT license
-"""
 import sys
 import numpy as np
 import json

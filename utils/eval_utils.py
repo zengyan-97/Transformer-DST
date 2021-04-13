@@ -1,7 +1,3 @@
-"""
-Most codes are from https://github.com/jasonwu0731/trade-dst
-"""
-
 from .data_utils import EXPERIMENT_DOMAINS
 
 

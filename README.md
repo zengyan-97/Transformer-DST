@@ -48,6 +48,9 @@ Some options are:
 --gt_gen: give the ground-truth generation for the evaluation.
 --eval_all: evaluate all combinations of these.
 ```
+Notice that the code evaluates model performance using batch_size == 1. \
+
+
 
 ### Evaluation Results on MultiWoz 2.1
 
@@ -75,13 +78,15 @@ taxi 0.559190031152648 0.9795430944963626
 ```
 
 You can download Transformer-DST at 15-th epoch from [here](https://drive.google.com/file/d/19hGZGt33K-bz3bf6HaHKmLTsKMC2yp93/view?usp=sharing).
-(I will upload the model checkpoint on MultiWoz 2.0 later.)
-
+On MultiWoz 2.0, Transformer-DST achieves 54.64% joint goal accuracy ([checkpoint](https://drive.google.com/file/d/1damnniVt_hehGYrrZ3lOy15NeaYvi_2-/view?usp=sharing)).  
 
 
 ## Reproducibility
-This code is based on open-source code of [SOM-DST](https://github.com/clovaai/som-dst) (Thanks!). 
 We can reproduce all of our experimental results on a P100 GPU device using 42 as random seed. (I only tried several seeds, and maybe you can get better results.) 
+
+
+## Acknowledgments
+This code is based [SOM-DST](https://github.com/clovaai/som-dst) and [pytorch-transformers v0.4.0](https://github.com/huggingface/transformers/tree/v0.4.0). We thank the authors for their wonderful open-source efforts.
 
 
 ## Citation
@@ -97,5 +102,7 @@ We can reproduce all of our experimental results on a P100 GPU device using 42 a
 
 
 ## Contact
-If you encounter any issue when reproducing our results, feel free to contact Yan Zeng ([yan.zeng@umontreal.ca](mailto:yan.zeng@umontreal.ca)). (Please follow the code requirements first.)
+For help using this code, please submit a GitHub issue. \
+For serious problems, please contact Yan Zeng ([yan.zeng@umontreal.ca](mailto:yan.zeng@umontreal.ca)). \
+(Please follow the code requirements first.)
 
