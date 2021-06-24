@@ -1,7 +1,7 @@
 # Transformer-DST
 
 
-This code is the official pytorch implementation of [Jointly Optimizing State Operation Prediction and Value Generation for Dialogue State Tracking](https://arxiv.org/abs/1911.03906).<br>
+This code is the official pytorch implementation of [Jointly Optimizing State Operation Prediction and Value Generation for Dialogue State Tracking](https://arxiv.org/abs/2010.14061).<br>
 
 <p align="left"><img width="95%" src="img/model.png" /></p>
 
